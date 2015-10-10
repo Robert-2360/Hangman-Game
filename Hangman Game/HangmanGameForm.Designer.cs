@@ -28,22 +28,428 @@
       /// </summary>
       private void InitializeComponent()
       {
+         this.charsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
+         this.aCharButton = new System.Windows.Forms.Button();
+         this.bCharButton = new System.Windows.Forms.Button();
+         this.cCharButton = new System.Windows.Forms.Button();
+         this.dCharButton = new System.Windows.Forms.Button();
+         this.eCharButton = new System.Windows.Forms.Button();
+         this.fCharButton = new System.Windows.Forms.Button();
+         this.gCharButton = new System.Windows.Forms.Button();
+         this.hCharButton = new System.Windows.Forms.Button();
+         this.iCharButton = new System.Windows.Forms.Button();
+         this.jCharButton = new System.Windows.Forms.Button();
+         this.kCharButton = new System.Windows.Forms.Button();
+         this.lCharButton = new System.Windows.Forms.Button();
+         this.mCharButton = new System.Windows.Forms.Button();
+         this.nCharButton = new System.Windows.Forms.Button();
+         this.oCharButton = new System.Windows.Forms.Button();
+         this.pCharButton = new System.Windows.Forms.Button();
+         this.qCharButton = new System.Windows.Forms.Button();
+         this.rCharButton = new System.Windows.Forms.Button();
+         this.sCharButton = new System.Windows.Forms.Button();
+         this.tCharButton = new System.Windows.Forms.Button();
+         this.uCharButton = new System.Windows.Forms.Button();
+         this.vCharButton = new System.Windows.Forms.Button();
+         this.wCharButton = new System.Windows.Forms.Button();
+         this.xCharButton = new System.Windows.Forms.Button();
+         this.yCharButton = new System.Windows.Forms.Button();
+         this.zCharButton = new System.Windows.Forms.Button();
+         this.charsFlowPanel.SuspendLayout();
          this.SuspendLayout();
+         // 
+         // charsFlowPanel
+         // 
+         this.charsFlowPanel.BackColor = System.Drawing.Color.White;
+         this.charsFlowPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+         this.charsFlowPanel.Controls.Add(this.aCharButton);
+         this.charsFlowPanel.Controls.Add(this.bCharButton);
+         this.charsFlowPanel.Controls.Add(this.cCharButton);
+         this.charsFlowPanel.Controls.Add(this.dCharButton);
+         this.charsFlowPanel.Controls.Add(this.eCharButton);
+         this.charsFlowPanel.Controls.Add(this.fCharButton);
+         this.charsFlowPanel.Controls.Add(this.gCharButton);
+         this.charsFlowPanel.Controls.Add(this.hCharButton);
+         this.charsFlowPanel.Controls.Add(this.iCharButton);
+         this.charsFlowPanel.Controls.Add(this.jCharButton);
+         this.charsFlowPanel.Controls.Add(this.kCharButton);
+         this.charsFlowPanel.Controls.Add(this.lCharButton);
+         this.charsFlowPanel.Controls.Add(this.mCharButton);
+         this.charsFlowPanel.Controls.Add(this.nCharButton);
+         this.charsFlowPanel.Controls.Add(this.oCharButton);
+         this.charsFlowPanel.Controls.Add(this.pCharButton);
+         this.charsFlowPanel.Controls.Add(this.qCharButton);
+         this.charsFlowPanel.Controls.Add(this.rCharButton);
+         this.charsFlowPanel.Controls.Add(this.sCharButton);
+         this.charsFlowPanel.Controls.Add(this.tCharButton);
+         this.charsFlowPanel.Controls.Add(this.uCharButton);
+         this.charsFlowPanel.Controls.Add(this.vCharButton);
+         this.charsFlowPanel.Controls.Add(this.wCharButton);
+         this.charsFlowPanel.Controls.Add(this.xCharButton);
+         this.charsFlowPanel.Controls.Add(this.yCharButton);
+         this.charsFlowPanel.Controls.Add(this.zCharButton);
+         this.charsFlowPanel.Location = new System.Drawing.Point(587, 84);
+         this.charsFlowPanel.Name = "charsFlowPanel";
+         this.charsFlowPanel.Size = new System.Drawing.Size(383, 458);
+         this.charsFlowPanel.TabIndex = 0;
+         // 
+         // aCharButton
+         // 
+         this.aCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.aCharButton.Location = new System.Drawing.Point(3, 3);
+         this.aCharButton.Name = "aCharButton";
+         this.aCharButton.Size = new System.Drawing.Size(70, 70);
+         this.aCharButton.TabIndex = 0;
+         this.aCharButton.TabStop = false;
+         this.aCharButton.Text = "a";
+         this.aCharButton.UseVisualStyleBackColor = false;
+         this.aCharButton.Click += new System.EventHandler(this.aCharButton_Click);
+         // 
+         // bCharButton
+         // 
+         this.bCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.bCharButton.Location = new System.Drawing.Point(79, 3);
+         this.bCharButton.Name = "bCharButton";
+         this.bCharButton.Size = new System.Drawing.Size(70, 70);
+         this.bCharButton.TabIndex = 1;
+         this.bCharButton.TabStop = false;
+         this.bCharButton.Text = "b";
+         this.bCharButton.UseVisualStyleBackColor = false;
+         this.bCharButton.Click += new System.EventHandler(this.bCharButton_Click);
+         // 
+         // cCharButton
+         // 
+         this.cCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.cCharButton.Location = new System.Drawing.Point(155, 3);
+         this.cCharButton.Name = "cCharButton";
+         this.cCharButton.Size = new System.Drawing.Size(70, 70);
+         this.cCharButton.TabIndex = 2;
+         this.cCharButton.TabStop = false;
+         this.cCharButton.Text = "c";
+         this.cCharButton.UseVisualStyleBackColor = false;
+         this.cCharButton.Click += new System.EventHandler(this.cCharButton_Click);
+         // 
+         // dCharButton
+         // 
+         this.dCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.dCharButton.Location = new System.Drawing.Point(231, 3);
+         this.dCharButton.Name = "dCharButton";
+         this.dCharButton.Size = new System.Drawing.Size(70, 70);
+         this.dCharButton.TabIndex = 3;
+         this.dCharButton.TabStop = false;
+         this.dCharButton.Text = "d";
+         this.dCharButton.UseVisualStyleBackColor = false;
+         this.dCharButton.Click += new System.EventHandler(this.dCharButton_Click);
+         // 
+         // eCharButton
+         // 
+         this.eCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.eCharButton.Location = new System.Drawing.Point(307, 3);
+         this.eCharButton.Name = "eCharButton";
+         this.eCharButton.Size = new System.Drawing.Size(70, 70);
+         this.eCharButton.TabIndex = 4;
+         this.eCharButton.TabStop = false;
+         this.eCharButton.Text = "e";
+         this.eCharButton.UseVisualStyleBackColor = false;
+         this.eCharButton.Click += new System.EventHandler(this.eCharButton_Click);
+         // 
+         // fCharButton
+         // 
+         this.fCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.fCharButton.Location = new System.Drawing.Point(3, 79);
+         this.fCharButton.Name = "fCharButton";
+         this.fCharButton.Size = new System.Drawing.Size(70, 70);
+         this.fCharButton.TabIndex = 5;
+         this.fCharButton.TabStop = false;
+         this.fCharButton.Text = "f";
+         this.fCharButton.UseVisualStyleBackColor = false;
+         this.fCharButton.Click += new System.EventHandler(this.fCharButton_Click);
+         // 
+         // gCharButton
+         // 
+         this.gCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.gCharButton.Location = new System.Drawing.Point(79, 79);
+         this.gCharButton.Name = "gCharButton";
+         this.gCharButton.Size = new System.Drawing.Size(70, 70);
+         this.gCharButton.TabIndex = 6;
+         this.gCharButton.TabStop = false;
+         this.gCharButton.Text = "g";
+         this.gCharButton.UseVisualStyleBackColor = false;
+         this.gCharButton.Click += new System.EventHandler(this.gCharButton_Click);
+         // 
+         // hCharButton
+         // 
+         this.hCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.hCharButton.Location = new System.Drawing.Point(155, 79);
+         this.hCharButton.Name = "hCharButton";
+         this.hCharButton.Size = new System.Drawing.Size(70, 70);
+         this.hCharButton.TabIndex = 7;
+         this.hCharButton.TabStop = false;
+         this.hCharButton.Text = "h";
+         this.hCharButton.UseVisualStyleBackColor = false;
+         this.hCharButton.Click += new System.EventHandler(this.hCharButton_Click);
+         // 
+         // iCharButton
+         // 
+         this.iCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.iCharButton.Location = new System.Drawing.Point(231, 79);
+         this.iCharButton.Name = "iCharButton";
+         this.iCharButton.Size = new System.Drawing.Size(70, 70);
+         this.iCharButton.TabIndex = 8;
+         this.iCharButton.TabStop = false;
+         this.iCharButton.Text = "i";
+         this.iCharButton.UseVisualStyleBackColor = false;
+         this.iCharButton.Click += new System.EventHandler(this.iCharButton_Click);
+         // 
+         // jCharButton
+         // 
+         this.jCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.jCharButton.Location = new System.Drawing.Point(307, 79);
+         this.jCharButton.Name = "jCharButton";
+         this.jCharButton.Size = new System.Drawing.Size(70, 70);
+         this.jCharButton.TabIndex = 9;
+         this.jCharButton.TabStop = false;
+         this.jCharButton.Text = "j";
+         this.jCharButton.UseVisualStyleBackColor = false;
+         this.jCharButton.Click += new System.EventHandler(this.jCharButton_Click);
+         // 
+         // kCharButton
+         // 
+         this.kCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.kCharButton.Location = new System.Drawing.Point(3, 155);
+         this.kCharButton.Name = "kCharButton";
+         this.kCharButton.Size = new System.Drawing.Size(70, 70);
+         this.kCharButton.TabIndex = 10;
+         this.kCharButton.TabStop = false;
+         this.kCharButton.Text = "k";
+         this.kCharButton.UseVisualStyleBackColor = false;
+         this.kCharButton.Click += new System.EventHandler(this.kCharButton_Click);
+         // 
+         // lCharButton
+         // 
+         this.lCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.lCharButton.Location = new System.Drawing.Point(79, 155);
+         this.lCharButton.Name = "lCharButton";
+         this.lCharButton.Size = new System.Drawing.Size(70, 70);
+         this.lCharButton.TabIndex = 11;
+         this.lCharButton.TabStop = false;
+         this.lCharButton.Text = "l";
+         this.lCharButton.UseVisualStyleBackColor = false;
+         this.lCharButton.Click += new System.EventHandler(this.lCharButton_Click);
+         // 
+         // mCharButton
+         // 
+         this.mCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.mCharButton.Location = new System.Drawing.Point(155, 155);
+         this.mCharButton.Name = "mCharButton";
+         this.mCharButton.Size = new System.Drawing.Size(70, 70);
+         this.mCharButton.TabIndex = 12;
+         this.mCharButton.TabStop = false;
+         this.mCharButton.Text = "m";
+         this.mCharButton.UseVisualStyleBackColor = false;
+         this.mCharButton.Click += new System.EventHandler(this.mCharButton_Click);
+         // 
+         // nCharButton
+         // 
+         this.nCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.nCharButton.Location = new System.Drawing.Point(231, 155);
+         this.nCharButton.Name = "nCharButton";
+         this.nCharButton.Size = new System.Drawing.Size(70, 70);
+         this.nCharButton.TabIndex = 13;
+         this.nCharButton.TabStop = false;
+         this.nCharButton.Text = "n";
+         this.nCharButton.UseVisualStyleBackColor = false;
+         this.nCharButton.Click += new System.EventHandler(this.nCharButton_Click);
+         // 
+         // oCharButton
+         // 
+         this.oCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.oCharButton.Location = new System.Drawing.Point(307, 155);
+         this.oCharButton.Name = "oCharButton";
+         this.oCharButton.Size = new System.Drawing.Size(70, 70);
+         this.oCharButton.TabIndex = 14;
+         this.oCharButton.TabStop = false;
+         this.oCharButton.Text = "o";
+         this.oCharButton.UseVisualStyleBackColor = false;
+         this.oCharButton.Click += new System.EventHandler(this.oCharButton_Click);
+         // 
+         // pCharButton
+         // 
+         this.pCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.pCharButton.Location = new System.Drawing.Point(3, 231);
+         this.pCharButton.Name = "pCharButton";
+         this.pCharButton.Size = new System.Drawing.Size(70, 70);
+         this.pCharButton.TabIndex = 15;
+         this.pCharButton.TabStop = false;
+         this.pCharButton.Text = "p";
+         this.pCharButton.UseVisualStyleBackColor = false;
+         this.pCharButton.Click += new System.EventHandler(this.pCharButton_Click);
+         // 
+         // qCharButton
+         // 
+         this.qCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.qCharButton.Location = new System.Drawing.Point(79, 231);
+         this.qCharButton.Name = "qCharButton";
+         this.qCharButton.Size = new System.Drawing.Size(70, 70);
+         this.qCharButton.TabIndex = 16;
+         this.qCharButton.TabStop = false;
+         this.qCharButton.Text = "q";
+         this.qCharButton.UseVisualStyleBackColor = false;
+         this.qCharButton.Click += new System.EventHandler(this.qCharButton_Click);
+         // 
+         // rCharButton
+         // 
+         this.rCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.rCharButton.Location = new System.Drawing.Point(155, 231);
+         this.rCharButton.Name = "rCharButton";
+         this.rCharButton.Size = new System.Drawing.Size(70, 70);
+         this.rCharButton.TabIndex = 17;
+         this.rCharButton.TabStop = false;
+         this.rCharButton.Text = "r";
+         this.rCharButton.UseVisualStyleBackColor = false;
+         this.rCharButton.Click += new System.EventHandler(this.rCharButton_Click);
+         // 
+         // sCharButton
+         // 
+         this.sCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.sCharButton.Location = new System.Drawing.Point(231, 231);
+         this.sCharButton.Name = "sCharButton";
+         this.sCharButton.Size = new System.Drawing.Size(70, 70);
+         this.sCharButton.TabIndex = 18;
+         this.sCharButton.TabStop = false;
+         this.sCharButton.Text = "s";
+         this.sCharButton.UseVisualStyleBackColor = false;
+         this.sCharButton.Click += new System.EventHandler(this.sCharButton_Click);
+         // 
+         // tCharButton
+         // 
+         this.tCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.tCharButton.Location = new System.Drawing.Point(307, 231);
+         this.tCharButton.Name = "tCharButton";
+         this.tCharButton.Size = new System.Drawing.Size(70, 70);
+         this.tCharButton.TabIndex = 19;
+         this.tCharButton.TabStop = false;
+         this.tCharButton.Text = "t";
+         this.tCharButton.UseVisualStyleBackColor = false;
+         this.tCharButton.Click += new System.EventHandler(this.tCharButton_Click);
+         // 
+         // uCharButton
+         // 
+         this.uCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.uCharButton.Location = new System.Drawing.Point(3, 307);
+         this.uCharButton.Name = "uCharButton";
+         this.uCharButton.Size = new System.Drawing.Size(70, 70);
+         this.uCharButton.TabIndex = 20;
+         this.uCharButton.TabStop = false;
+         this.uCharButton.Text = "u";
+         this.uCharButton.UseVisualStyleBackColor = false;
+         this.uCharButton.Click += new System.EventHandler(this.uCharButton_Click);
+         // 
+         // vCharButton
+         // 
+         this.vCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.vCharButton.Location = new System.Drawing.Point(79, 307);
+         this.vCharButton.Name = "vCharButton";
+         this.vCharButton.Size = new System.Drawing.Size(70, 70);
+         this.vCharButton.TabIndex = 21;
+         this.vCharButton.TabStop = false;
+         this.vCharButton.Text = "v";
+         this.vCharButton.UseVisualStyleBackColor = false;
+         this.vCharButton.Click += new System.EventHandler(this.vCharButton_Click);
+         // 
+         // wCharButton
+         // 
+         this.wCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.wCharButton.Location = new System.Drawing.Point(155, 307);
+         this.wCharButton.Name = "wCharButton";
+         this.wCharButton.Size = new System.Drawing.Size(70, 70);
+         this.wCharButton.TabIndex = 22;
+         this.wCharButton.TabStop = false;
+         this.wCharButton.Text = "w";
+         this.wCharButton.UseVisualStyleBackColor = false;
+         this.wCharButton.Click += new System.EventHandler(this.wCharButton_Click);
+         // 
+         // xCharButton
+         // 
+         this.xCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.xCharButton.Location = new System.Drawing.Point(231, 307);
+         this.xCharButton.Name = "xCharButton";
+         this.xCharButton.Size = new System.Drawing.Size(70, 70);
+         this.xCharButton.TabIndex = 23;
+         this.xCharButton.TabStop = false;
+         this.xCharButton.Text = "x";
+         this.xCharButton.UseVisualStyleBackColor = false;
+         this.xCharButton.Click += new System.EventHandler(this.xCharButton_Click);
+         // 
+         // yCharButton
+         // 
+         this.yCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.yCharButton.Location = new System.Drawing.Point(307, 307);
+         this.yCharButton.Name = "yCharButton";
+         this.yCharButton.Size = new System.Drawing.Size(70, 70);
+         this.yCharButton.TabIndex = 24;
+         this.yCharButton.TabStop = false;
+         this.yCharButton.Text = "y";
+         this.yCharButton.UseVisualStyleBackColor = false;
+         this.yCharButton.Click += new System.EventHandler(this.yCharButton_Click);
+         // 
+         // zCharButton
+         // 
+         this.zCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.zCharButton.Location = new System.Drawing.Point(115, 383);
+         this.zCharButton.Margin = new System.Windows.Forms.Padding(115, 3, 3, 3);
+         this.zCharButton.Name = "zCharButton";
+         this.zCharButton.Size = new System.Drawing.Size(150, 70);
+         this.zCharButton.TabIndex = 25;
+         this.zCharButton.TabStop = false;
+         this.zCharButton.Text = "z";
+         this.zCharButton.UseVisualStyleBackColor = false;
+         this.zCharButton.Click += new System.EventHandler(this.zCharButton_Click);
          // 
          // HangmanGameForm
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
          this.ClientSize = new System.Drawing.Size(982, 554);
-         this.Font = new System.Drawing.Font("Segoe UI", 20.03478F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.Controls.Add(this.charsFlowPanel);
+         this.Font = new System.Drawing.Font("Segoe UI", 16.27826F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
          this.MaximizeBox = false;
          this.Name = "HangmanGameForm";
          this.Text = "Hangman Game";
+         this.charsFlowPanel.ResumeLayout(false);
          this.ResumeLayout(false);
 
       }
 
       #endregion
+
+      private System.Windows.Forms.FlowLayoutPanel charsFlowPanel;
+      private System.Windows.Forms.Button aCharButton;
+      private System.Windows.Forms.Button bCharButton;
+      private System.Windows.Forms.Button cCharButton;
+      private System.Windows.Forms.Button dCharButton;
+      private System.Windows.Forms.Button eCharButton;
+      private System.Windows.Forms.Button fCharButton;
+      private System.Windows.Forms.Button gCharButton;
+      private System.Windows.Forms.Button hCharButton;
+      private System.Windows.Forms.Button iCharButton;
+      private System.Windows.Forms.Button jCharButton;
+      private System.Windows.Forms.Button kCharButton;
+      private System.Windows.Forms.Button lCharButton;
+      private System.Windows.Forms.Button mCharButton;
+      private System.Windows.Forms.Button nCharButton;
+      private System.Windows.Forms.Button oCharButton;
+      private System.Windows.Forms.Button pCharButton;
+      private System.Windows.Forms.Button qCharButton;
+      private System.Windows.Forms.Button rCharButton;
+      private System.Windows.Forms.Button sCharButton;
+      private System.Windows.Forms.Button tCharButton;
+      private System.Windows.Forms.Button uCharButton;
+      private System.Windows.Forms.Button vCharButton;
+      private System.Windows.Forms.Button wCharButton;
+      private System.Windows.Forms.Button xCharButton;
+      private System.Windows.Forms.Button yCharButton;
+      private System.Windows.Forms.Button zCharButton;
    }
 }
 
