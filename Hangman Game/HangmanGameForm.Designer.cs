@@ -67,10 +67,13 @@
          this.wordChar2 = new System.Windows.Forms.Label();
          this.wordChar1 = new System.Windows.Forms.Label();
          this.wordChar0 = new System.Windows.Forms.Label();
+         this.statusPanel = new System.Windows.Forms.Panel();
+         this.statusLabel = new System.Windows.Forms.Label();
          this.charsFlowPanel.SuspendLayout();
          this.drawingPanel.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.drawingPictureBox)).BeginInit();
          this.wordPanel.SuspendLayout();
+         this.statusPanel.SuspendLayout();
          this.SuspendLayout();
          // 
          // charsFlowPanel
@@ -565,10 +568,31 @@
          this.wordChar0.Text = "0";
          this.wordChar0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
+         // statusPanel
+         // 
+         this.statusPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+         this.statusPanel.Controls.Add(this.statusLabel);
+         this.statusPanel.Location = new System.Drawing.Point(587, 12);
+         this.statusPanel.Name = "statusPanel";
+         this.statusPanel.Size = new System.Drawing.Size(383, 66);
+         this.statusPanel.TabIndex = 3;
+         // 
+         // statusLabel
+         // 
+         this.statusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+         this.statusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.statusLabel.Location = new System.Drawing.Point(0, 0);
+         this.statusLabel.Name = "statusLabel";
+         this.statusLabel.Size = new System.Drawing.Size(381, 64);
+         this.statusLabel.TabIndex = 0;
+         this.statusLabel.Text = "This is the game status";
+         this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+         // 
          // HangmanGameForm
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
          this.ClientSize = new System.Drawing.Size(982, 554);
+         this.Controls.Add(this.statusPanel);
          this.Controls.Add(this.wordPanel);
          this.Controls.Add(this.drawingPanel);
          this.Controls.Add(this.charsFlowPanel);
@@ -581,6 +605,7 @@
          this.drawingPanel.ResumeLayout(false);
          ((System.ComponentModel.ISupportInitialize)(this.drawingPictureBox)).EndInit();
          this.wordPanel.ResumeLayout(false);
+         this.statusPanel.ResumeLayout(false);
          this.ResumeLayout(false);
 
       }
@@ -626,6 +651,8 @@
       private System.Windows.Forms.Label wordChar2;
       private System.Windows.Forms.Label wordChar1;
       private System.Windows.Forms.Label wordChar0;
+      private System.Windows.Forms.Panel statusPanel;
+      private System.Windows.Forms.Label statusLabel;
    }
 }
 
