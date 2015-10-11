@@ -55,7 +55,22 @@
          this.xCharButton = new System.Windows.Forms.Button();
          this.yCharButton = new System.Windows.Forms.Button();
          this.zCharButton = new System.Windows.Forms.Button();
+         this.drawingPanel = new System.Windows.Forms.Panel();
+         this.drawingPictureBox = new System.Windows.Forms.PictureBox();
+         this.wordPanel = new System.Windows.Forms.Panel();
+         this.wordChar8 = new System.Windows.Forms.Label();
+         this.wordChar7 = new System.Windows.Forms.Label();
+         this.wordChar6 = new System.Windows.Forms.Label();
+         this.wordChar5 = new System.Windows.Forms.Label();
+         this.wordChar4 = new System.Windows.Forms.Label();
+         this.wordChar3 = new System.Windows.Forms.Label();
+         this.wordChar2 = new System.Windows.Forms.Label();
+         this.wordChar1 = new System.Windows.Forms.Label();
+         this.wordChar0 = new System.Windows.Forms.Label();
          this.charsFlowPanel.SuspendLayout();
+         this.drawingPanel.SuspendLayout();
+         ((System.ComponentModel.ISupportInitialize)(this.drawingPictureBox)).BeginInit();
+         this.wordPanel.SuspendLayout();
          this.SuspendLayout();
          // 
          // charsFlowPanel
@@ -406,10 +421,156 @@
          this.zCharButton.UseVisualStyleBackColor = false;
          this.zCharButton.Click += new System.EventHandler(this.zCharButton_Click);
          // 
+         // drawingPanel
+         // 
+         this.drawingPanel.Controls.Add(this.drawingPictureBox);
+         this.drawingPanel.Location = new System.Drawing.Point(12, 12);
+         this.drawingPanel.Name = "drawingPanel";
+         this.drawingPanel.Size = new System.Drawing.Size(569, 450);
+         this.drawingPanel.TabIndex = 1;
+         // 
+         // drawingPictureBox
+         // 
+         this.drawingPictureBox.BackColor = System.Drawing.Color.White;
+         this.drawingPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.drawingPictureBox.Location = new System.Drawing.Point(0, 0);
+         this.drawingPictureBox.Name = "drawingPictureBox";
+         this.drawingPictureBox.Size = new System.Drawing.Size(569, 450);
+         this.drawingPictureBox.TabIndex = 0;
+         this.drawingPictureBox.TabStop = false;
+         // 
+         // wordPanel
+         // 
+         this.wordPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+         this.wordPanel.Controls.Add(this.wordChar8);
+         this.wordPanel.Controls.Add(this.wordChar7);
+         this.wordPanel.Controls.Add(this.wordChar6);
+         this.wordPanel.Controls.Add(this.wordChar5);
+         this.wordPanel.Controls.Add(this.wordChar4);
+         this.wordPanel.Controls.Add(this.wordChar3);
+         this.wordPanel.Controls.Add(this.wordChar2);
+         this.wordPanel.Controls.Add(this.wordChar1);
+         this.wordPanel.Controls.Add(this.wordChar0);
+         this.wordPanel.Location = new System.Drawing.Point(12, 468);
+         this.wordPanel.Name = "wordPanel";
+         this.wordPanel.Size = new System.Drawing.Size(569, 74);
+         this.wordPanel.TabIndex = 2;
+         // 
+         // wordChar8
+         // 
+         this.wordChar8.BackColor = System.Drawing.Color.White;
+         this.wordChar8.Font = new System.Drawing.Font("Segoe UI", 18.15652F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.wordChar8.Location = new System.Drawing.Point(508, 14);
+         this.wordChar8.Margin = new System.Windows.Forms.Padding(0);
+         this.wordChar8.Name = "wordChar8";
+         this.wordChar8.Size = new System.Drawing.Size(46, 46);
+         this.wordChar8.TabIndex = 8;
+         this.wordChar8.Text = "8";
+         this.wordChar8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         // 
+         // wordChar7
+         // 
+         this.wordChar7.BackColor = System.Drawing.Color.White;
+         this.wordChar7.Font = new System.Drawing.Font("Segoe UI", 18.15652F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.wordChar7.Location = new System.Drawing.Point(446, 14);
+         this.wordChar7.Margin = new System.Windows.Forms.Padding(0);
+         this.wordChar7.Name = "wordChar7";
+         this.wordChar7.Size = new System.Drawing.Size(46, 46);
+         this.wordChar7.TabIndex = 7;
+         this.wordChar7.Text = "7";
+         this.wordChar7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         // 
+         // wordChar6
+         // 
+         this.wordChar6.BackColor = System.Drawing.Color.White;
+         this.wordChar6.Font = new System.Drawing.Font("Segoe UI", 18.15652F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.wordChar6.Location = new System.Drawing.Point(385, 14);
+         this.wordChar6.Margin = new System.Windows.Forms.Padding(0);
+         this.wordChar6.Name = "wordChar6";
+         this.wordChar6.Size = new System.Drawing.Size(46, 46);
+         this.wordChar6.TabIndex = 6;
+         this.wordChar6.Text = "6";
+         this.wordChar6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         // 
+         // wordChar5
+         // 
+         this.wordChar5.BackColor = System.Drawing.Color.White;
+         this.wordChar5.Font = new System.Drawing.Font("Segoe UI", 18.15652F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.wordChar5.Location = new System.Drawing.Point(323, 14);
+         this.wordChar5.Margin = new System.Windows.Forms.Padding(0);
+         this.wordChar5.Name = "wordChar5";
+         this.wordChar5.Size = new System.Drawing.Size(46, 46);
+         this.wordChar5.TabIndex = 5;
+         this.wordChar5.Text = "5";
+         this.wordChar5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         // 
+         // wordChar4
+         // 
+         this.wordChar4.BackColor = System.Drawing.Color.White;
+         this.wordChar4.Font = new System.Drawing.Font("Segoe UI", 18.15652F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.wordChar4.Location = new System.Drawing.Point(262, 14);
+         this.wordChar4.Margin = new System.Windows.Forms.Padding(0);
+         this.wordChar4.Name = "wordChar4";
+         this.wordChar4.Size = new System.Drawing.Size(46, 46);
+         this.wordChar4.TabIndex = 4;
+         this.wordChar4.Text = "4";
+         this.wordChar4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         // 
+         // wordChar3
+         // 
+         this.wordChar3.BackColor = System.Drawing.Color.White;
+         this.wordChar3.Font = new System.Drawing.Font("Segoe UI", 18.15652F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.wordChar3.Location = new System.Drawing.Point(200, 14);
+         this.wordChar3.Margin = new System.Windows.Forms.Padding(0);
+         this.wordChar3.Name = "wordChar3";
+         this.wordChar3.Size = new System.Drawing.Size(46, 46);
+         this.wordChar3.TabIndex = 3;
+         this.wordChar3.Text = "3";
+         this.wordChar3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         // 
+         // wordChar2
+         // 
+         this.wordChar2.BackColor = System.Drawing.Color.White;
+         this.wordChar2.Font = new System.Drawing.Font("Segoe UI", 18.15652F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.wordChar2.Location = new System.Drawing.Point(139, 14);
+         this.wordChar2.Margin = new System.Windows.Forms.Padding(0);
+         this.wordChar2.Name = "wordChar2";
+         this.wordChar2.Size = new System.Drawing.Size(46, 46);
+         this.wordChar2.TabIndex = 2;
+         this.wordChar2.Text = "2";
+         this.wordChar2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         // 
+         // wordChar1
+         // 
+         this.wordChar1.BackColor = System.Drawing.Color.White;
+         this.wordChar1.Font = new System.Drawing.Font("Segoe UI", 18.15652F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.wordChar1.Location = new System.Drawing.Point(77, 14);
+         this.wordChar1.Margin = new System.Windows.Forms.Padding(0);
+         this.wordChar1.Name = "wordChar1";
+         this.wordChar1.Size = new System.Drawing.Size(46, 46);
+         this.wordChar1.TabIndex = 1;
+         this.wordChar1.Text = "1";
+         this.wordChar1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         // 
+         // wordChar0
+         // 
+         this.wordChar0.BackColor = System.Drawing.Color.White;
+         this.wordChar0.Font = new System.Drawing.Font("Segoe UI", 18.15652F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.wordChar0.ForeColor = System.Drawing.SystemColors.ControlText;
+         this.wordChar0.Location = new System.Drawing.Point(16, 14);
+         this.wordChar0.Margin = new System.Windows.Forms.Padding(0);
+         this.wordChar0.Name = "wordChar0";
+         this.wordChar0.Size = new System.Drawing.Size(46, 46);
+         this.wordChar0.TabIndex = 0;
+         this.wordChar0.Text = "0";
+         this.wordChar0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         // 
          // HangmanGameForm
          // 
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
          this.ClientSize = new System.Drawing.Size(982, 554);
+         this.Controls.Add(this.wordPanel);
+         this.Controls.Add(this.drawingPanel);
          this.Controls.Add(this.charsFlowPanel);
          this.Font = new System.Drawing.Font("Segoe UI", 16.27826F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -417,6 +578,9 @@
          this.Name = "HangmanGameForm";
          this.Text = "Hangman Game";
          this.charsFlowPanel.ResumeLayout(false);
+         this.drawingPanel.ResumeLayout(false);
+         ((System.ComponentModel.ISupportInitialize)(this.drawingPictureBox)).EndInit();
+         this.wordPanel.ResumeLayout(false);
          this.ResumeLayout(false);
 
       }
@@ -450,6 +614,18 @@
       private System.Windows.Forms.Button xCharButton;
       private System.Windows.Forms.Button yCharButton;
       private System.Windows.Forms.Button zCharButton;
+      private System.Windows.Forms.Panel drawingPanel;
+      private System.Windows.Forms.PictureBox drawingPictureBox;
+      private System.Windows.Forms.Panel wordPanel;
+      private System.Windows.Forms.Label wordChar8;
+      private System.Windows.Forms.Label wordChar7;
+      private System.Windows.Forms.Label wordChar6;
+      private System.Windows.Forms.Label wordChar5;
+      private System.Windows.Forms.Label wordChar4;
+      private System.Windows.Forms.Label wordChar3;
+      private System.Windows.Forms.Label wordChar2;
+      private System.Windows.Forms.Label wordChar1;
+      private System.Windows.Forms.Label wordChar0;
    }
 }
 
