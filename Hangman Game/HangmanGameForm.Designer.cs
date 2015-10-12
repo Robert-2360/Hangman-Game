@@ -614,6 +614,7 @@
          this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
          this.gameToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
          this.gameToolStripMenuItem.Text = "Start New Game";
+         this.gameToolStripMenuItem.Click += new System.EventHandler(this.gameToolStripMenuItem_Click);
          // 
          // viewInstrutionsToolStripMenuItem
          // 

@@ -12,9 +12,12 @@ namespace Hangman_Game
 {
    public partial class HangmanGameForm : Form
    {
+      private WordFile wordFile;
+
       public HangmanGameForm()
       {
          InitializeComponent();
+         wordFile = new WordFile();
       }
 
       private void buttonClicked(Button b)
@@ -151,6 +154,12 @@ namespace Hangman_Game
       private void zCharButton_Click(object sender, EventArgs e)
       {
          buttonClicked(zCharButton);
+      }
+
+      private void gameToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+         wordFile.SecretWord = wordFile.SecretWord;
+         statusLabel.Text = wordFile.SecretWord + wordFile.SecretWord.Length;
       }
    }
 }
