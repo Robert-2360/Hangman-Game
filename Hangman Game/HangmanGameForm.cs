@@ -13,13 +13,18 @@ namespace Hangman_Game
    public partial class HangmanGameForm : Form
    {
       private WordFile wordFile;
+
       private Label[] wordLabels;
       private int maxWordSize = 9;
+
+      private Button[] charButtons;
 
       public HangmanGameForm()
       {
          InitializeComponent();
+
          wordFile = new WordFile();
+
          wordLabels = new Label[maxWordSize];
          wordLabels[0] = wordChar0;
          wordLabels[1] = wordChar1;
@@ -31,12 +36,47 @@ namespace Hangman_Game
          wordLabels[7] = wordChar7;
          wordLabels[8] = wordChar8;
 
+         charButtons = new Button[26];
+         charButtons[0] = aCharButton;
+         charButtons[1] = bCharButton;
+         charButtons[2] = cCharButton;
+         charButtons[3] = dCharButton;
+         charButtons[4] = eCharButton;
+         charButtons[5] = fCharButton;
+         charButtons[6] = gCharButton;
+         charButtons[7] = hCharButton;
+         charButtons[8] = iCharButton;
+         charButtons[9] = jCharButton;
+         charButtons[10] = kCharButton;
+         charButtons[11] = lCharButton;
+         charButtons[12] = mCharButton;
+         charButtons[13] = nCharButton;
+         charButtons[14] = oCharButton;
+         charButtons[15] = pCharButton;
+         charButtons[16] = qCharButton;
+         charButtons[17] = rCharButton;
+         charButtons[18] = sCharButton;
+         charButtons[19] = tCharButton;
+         charButtons[20] = uCharButton;
+         charButtons[21] = vCharButton;
+         charButtons[22] = wCharButton;
+         charButtons[23] = xCharButton;
+         charButtons[24] = yCharButton;
+         charButtons[25] = zCharButton;
       }
 
       private void buttonClicked(Button b)
       {
          b.Enabled = false;
          b.BackColor = Color.FromArgb(255, 232, 235);
+
+         for (int i = 0; i < wordFile.SecretWord.Length; i++)
+         {
+            if (wordFile.SecretWord[i] == Convert.ToChar(b.Text))
+            {
+               wordLabels[i].Text = b.Text;
+            }
+         }
       }
 
       private void aCharButton_Click(object sender, EventArgs e)
@@ -171,6 +211,12 @@ namespace Hangman_Game
 
       private void startNewGameToolStripMenuItem_Click(object sender, EventArgs e)
       {
+         for (int i = 0; i < 26; i++)
+         {
+            charButtons[i].Enabled = true;
+            charButtons[i].BackColor = Color.FromArgb(202, 234, 189);
+         }
+
          wordFile.setSecretWord();
          statusLabel.Text = string.Format("Your new word has {0} letters", wordFile.SecretWord.Length);
 
