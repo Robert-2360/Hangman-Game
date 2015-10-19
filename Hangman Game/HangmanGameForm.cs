@@ -13,11 +13,24 @@ namespace Hangman_Game
    public partial class HangmanGameForm : Form
    {
       private WordFile wordFile;
+      private Label[] wordLabels;
+      private int maxWordSize = 9;
 
       public HangmanGameForm()
       {
          InitializeComponent();
          wordFile = new WordFile();
+         wordLabels = new Label[maxWordSize];
+         wordLabels[0] = wordChar0;
+         wordLabels[1] = wordChar1;
+         wordLabels[2] = wordChar2;
+         wordLabels[3] = wordChar3;
+         wordLabels[4] = wordChar4;
+         wordLabels[5] = wordChar5;
+         wordLabels[6] = wordChar6;
+         wordLabels[7] = wordChar7;
+         wordLabels[8] = wordChar8;
+
       }
 
       private void buttonClicked(Button b)
@@ -156,10 +169,26 @@ namespace Hangman_Game
          buttonClicked(zCharButton);
       }
 
-      private void gameToolStripMenuItem_Click(object sender, EventArgs e)
+      private void startNewGameToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         wordFile.SecretWord = wordFile.SecretWord;
-         statusLabel.Text = wordFile.SecretWord + wordFile.SecretWord.Length;
+         wordFile.setSecretWord();
+         statusLabel.Text = string.Format("Your new word has {0} letters", wordFile.SecretWord.Length);
+
+         for (int i = 0; i < maxWordSize; i++)
+         {
+            wordLabels[i].Text = "";
+            wordLabels[i].Visible = false;
+         }
+
+         for (int i = 0; i < wordFile.SecretWord.Length; i++)
+         {
+            wordLabels[i].Visible = true;
+         }
+      }
+
+      private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+
       }
    }
 }

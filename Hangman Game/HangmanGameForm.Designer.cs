@@ -614,7 +614,7 @@
          this.startNewGameToolStripMenuItem.Name = "startNewGameToolStripMenuItem";
          this.startNewGameToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
          this.startNewGameToolStripMenuItem.Text = "Start New Game";
-         this.startNewGameToolStripMenuItem.Click += new System.EventHandler(this.gameToolStripMenuItem_Click);
+         this.startNewGameToolStripMenuItem.Click += new System.EventHandler(this.startNewGameToolStripMenuItem_Click);
          // 
          // viewInstrutionsToolStripMenuItem
          // 
@@ -622,6 +622,7 @@
          this.viewInstrutionsToolStripMenuItem.Name = "viewInstrutionsToolStripMenuItem";
          this.viewInstrutionsToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
          this.viewInstrutionsToolStripMenuItem.Text = "View Instrutions";
+         this.viewInstrutionsToolStripMenuItem.Click += new System.EventHandler(this.viewInstrutionsToolStripMenuItem_Click);
          // 
          // giveMeAHintToolStripMenuItem
          // 

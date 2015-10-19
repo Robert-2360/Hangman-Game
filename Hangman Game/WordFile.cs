@@ -9,7 +9,19 @@ namespace Hangman_Game
    public class WordFile
    {
       private string[] words;
-      private string secretWord;
+
+      private string _secretWord;
+      public string SecretWord
+      {
+         get { return _secretWord; }
+      }
+
+      public void setSecretWord()
+      {
+         Random random = new Random();
+         int randomNumber = random.Next(words.Length);
+         _secretWord = words[randomNumber];
+      }
 
       public WordFile()
       {
@@ -19,17 +31,6 @@ namespace Hangman_Game
          for (int i = 0; i < words.Length; i++)
          {
             words[i] = words[i].TrimEnd();
-         }
-      }
-
-      public string SecretWord
-      {
-         get { return secretWord; }
-         set
-         {
-            Random random = new Random();
-            int randomNumber = random.Next(words.Length);
-            secretWord = words[randomNumber];
          }
       }
    }
