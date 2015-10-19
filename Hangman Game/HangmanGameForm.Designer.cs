@@ -70,7 +70,7 @@
          this.statusPanel = new System.Windows.Forms.Panel();
          this.statusLabel = new System.Windows.Forms.Label();
          this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-         this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.startNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.viewInstrutionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.giveMeAHintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.giveUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -474,8 +474,8 @@
          this.wordChar8.Name = "wordChar8";
          this.wordChar8.Size = new System.Drawing.Size(46, 46);
          this.wordChar8.TabIndex = 8;
-         this.wordChar8.Text = "8";
          this.wordChar8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         this.wordChar8.Visible = false;
          // 
          // wordChar7
          // 
@@ -486,8 +486,8 @@
          this.wordChar7.Name = "wordChar7";
          this.wordChar7.Size = new System.Drawing.Size(46, 46);
          this.wordChar7.TabIndex = 7;
-         this.wordChar7.Text = "7";
          this.wordChar7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         this.wordChar7.Visible = false;
          // 
          // wordChar6
          // 
@@ -498,7 +498,7 @@
          this.wordChar6.Name = "wordChar6";
          this.wordChar6.Size = new System.Drawing.Size(46, 46);
          this.wordChar6.TabIndex = 6;
-         this.wordChar6.Text = "6";
+         this.wordChar6.Text = "n";
          this.wordChar6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
          // wordChar5
@@ -510,7 +510,7 @@
          this.wordChar5.Name = "wordChar5";
          this.wordChar5.Size = new System.Drawing.Size(46, 46);
          this.wordChar5.TabIndex = 5;
-         this.wordChar5.Text = "5";
+         this.wordChar5.Text = "a";
          this.wordChar5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
          // wordChar4
@@ -522,7 +522,7 @@
          this.wordChar4.Name = "wordChar4";
          this.wordChar4.Size = new System.Drawing.Size(46, 46);
          this.wordChar4.TabIndex = 4;
-         this.wordChar4.Text = "4";
+         this.wordChar4.Text = "m";
          this.wordChar4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
          // wordChar3
@@ -534,7 +534,7 @@
          this.wordChar3.Name = "wordChar3";
          this.wordChar3.Size = new System.Drawing.Size(46, 46);
          this.wordChar3.TabIndex = 3;
-         this.wordChar3.Text = "3";
+         this.wordChar3.Text = "g";
          this.wordChar3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
          // wordChar2
@@ -546,7 +546,7 @@
          this.wordChar2.Name = "wordChar2";
          this.wordChar2.Size = new System.Drawing.Size(46, 46);
          this.wordChar2.TabIndex = 2;
-         this.wordChar2.Text = "2";
+         this.wordChar2.Text = "n";
          this.wordChar2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
          // wordChar1
@@ -558,7 +558,7 @@
          this.wordChar1.Name = "wordChar1";
          this.wordChar1.Size = new System.Drawing.Size(46, 46);
          this.wordChar1.TabIndex = 1;
-         this.wordChar1.Text = "1";
+         this.wordChar1.Text = "a";
          this.wordChar1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
          // wordChar0
@@ -571,7 +571,7 @@
          this.wordChar0.Name = "wordChar0";
          this.wordChar0.Size = new System.Drawing.Size(46, 46);
          this.wordChar0.TabIndex = 0;
-         this.wordChar0.Text = "0";
+         this.wordChar0.Text = "h";
          this.wordChar0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
          // statusPanel
@@ -591,14 +591,14 @@
          this.statusLabel.Name = "statusLabel";
          this.statusLabel.Size = new System.Drawing.Size(381, 64);
          this.statusLabel.TabIndex = 0;
-         this.statusLabel.Text = "This is the game status";
+         this.statusLabel.Text = "Welcome to Hangman Game";
          this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
          // 
          // menuStrip1
          // 
          this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
          this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gameToolStripMenuItem,
+            this.startNewGameToolStripMenuItem,
             this.viewInstrutionsToolStripMenuItem,
             this.giveMeAHintToolStripMenuItem,
             this.giveUpToolStripMenuItem});
@@ -608,13 +608,13 @@
          this.menuStrip1.TabIndex = 4;
          this.menuStrip1.Text = "menuStrip1";
          // 
-         // gameToolStripMenuItem
+         // startNewGameToolStripMenuItem
          // 
-         this.gameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
-         this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-         this.gameToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
-         this.gameToolStripMenuItem.Text = "Start New Game";
-         this.gameToolStripMenuItem.Click += new System.EventHandler(this.gameToolStripMenuItem_Click);
+         this.startNewGameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.startNewGameToolStripMenuItem.Name = "startNewGameToolStripMenuItem";
+         this.startNewGameToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
+         this.startNewGameToolStripMenuItem.Text = "Start New Game";
+         this.startNewGameToolStripMenuItem.Click += new System.EventHandler(this.gameToolStripMenuItem_Click);
          // 
          // viewInstrutionsToolStripMenuItem
          // 
@@ -629,6 +629,7 @@
          this.giveMeAHintToolStripMenuItem.Name = "giveMeAHintToolStripMenuItem";
          this.giveMeAHintToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
          this.giveMeAHintToolStripMenuItem.Text = "Give me a hint";
+         this.giveMeAHintToolStripMenuItem.Visible = false;
          // 
          // giveUpToolStripMenuItem
          // 
@@ -636,6 +637,7 @@
          this.giveUpToolStripMenuItem.Name = "giveUpToolStripMenuItem";
          this.giveUpToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
          this.giveUpToolStripMenuItem.Text = "Give up";
+         this.giveUpToolStripMenuItem.Visible = false;
          // 
          // HangmanGameForm
          // 
@@ -708,7 +710,7 @@
       private System.Windows.Forms.Panel statusPanel;
       private System.Windows.Forms.Label statusLabel;
       private System.Windows.Forms.MenuStrip menuStrip1;
-      private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
+      private System.Windows.Forms.ToolStripMenuItem startNewGameToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem viewInstrutionsToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem giveMeAHintToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem giveUpToolStripMenuItem;
