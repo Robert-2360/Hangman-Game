@@ -15,6 +15,7 @@ namespace Hangman_Game
       private WordFile wordFile;
 
       private int lettersRemainingCounter;
+      private int lettersWrongCounter;
 
       private Label[] wordLabels;
       private int maxWordSize = 9;
@@ -203,6 +204,8 @@ namespace Hangman_Game
       // Actions performed when a letter button is clicked
       private void buttonClicked(Button b)
       {
+         bool letterFound = false;
+
          // Disable button
          b.Enabled = false;
          b.BackColor = Color.FromArgb(255, 232, 235);
@@ -214,8 +217,16 @@ namespace Hangman_Game
             {
                wordLabels[i].Text = b.Text;
                lettersRemainingCounter--;
+               letterFound = true;
             }
          }
+
+         // Count the number of letter not in the SecretWord
+         if (!letterFound) lettersWrongCounter++;
+
+         // Update status label
+         statusLabel.Text = string.Format("Remaining: {0} Letters wrong: {1}",
+            lettersRemainingCounter, lettersWrongCounter);
 
          // Check if game is over
          if (lettersRemainingCounter == 0)
@@ -223,12 +234,21 @@ namespace Hangman_Game
             statusLabel.Text = "You win";
             giveMeAHintToolStripMenuItem.Visible = false;
             giveUpToolStripMenuItem.Visible = false;
+
+            // Disable remaining letter buttons
+            for (int i = 0; i < 26; i++)
+            {
+               charButtons[i].Enabled = false;
+            }
          }
       }
 
       // Actions performed when the Start New Game menu item is clicked
       private void startNewGameToolStripMenuItem_Click(object sender, EventArgs e)
       {
+         // Reset counter
+         lettersWrongCounter = 0;
+
          // Enable letter buttons
          for (int i = 0; i < 26; i++)
          {
