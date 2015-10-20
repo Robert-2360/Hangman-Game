@@ -14,6 +14,8 @@ namespace Hangman_Game
    {
       private WordFile wordFile;
 
+      private int lettersRemainingCounter;
+
       private Label[] wordLabels;
       private int maxWordSize = 9;
 
@@ -25,6 +27,7 @@ namespace Hangman_Game
 
          wordFile = new WordFile();
 
+         // Initialize label array for SecretWord letters display
          wordLabels = new Label[maxWordSize];
          wordLabels[0] = wordChar0;
          wordLabels[1] = wordChar1;
@@ -36,6 +39,7 @@ namespace Hangman_Game
          wordLabels[7] = wordChar7;
          wordLabels[8] = wordChar8;
 
+         // Initialize button array for letter choices box
          charButtons = new Button[26];
          charButtons[0] = aCharButton;
          charButtons[1] = bCharButton;
@@ -65,20 +69,7 @@ namespace Hangman_Game
          charButtons[25] = zCharButton;
       }
 
-      private void buttonClicked(Button b)
-      {
-         b.Enabled = false;
-         b.BackColor = Color.FromArgb(255, 232, 235);
-
-         for (int i = 0; i < wordFile.SecretWord.Length; i++)
-         {
-            if (wordFile.SecretWord[i] == Convert.ToChar(b.Text))
-            {
-               wordLabels[i].Text = b.Text;
-            }
-         }
-      }
-
+      // The following 26 methods are for each letter choice button
       private void aCharButton_Click(object sender, EventArgs e)
       {
          buttonClicked(aCharButton);
@@ -209,29 +200,66 @@ namespace Hangman_Game
          buttonClicked(zCharButton);
       }
 
+      // Actions performed when a letter button is clicked
+      private void buttonClicked(Button b)
+      {
+         // Disable button
+         b.Enabled = false;
+         b.BackColor = Color.FromArgb(255, 232, 235);
+
+         // If present in SecretWord, make that letter visible
+         for (int i = 0; i < wordFile.SecretWord.Length; i++)
+         {
+            if (wordFile.SecretWord[i] == Convert.ToChar(b.Text))
+            {
+               wordLabels[i].Text = b.Text;
+               lettersRemainingCounter--;
+            }
+         }
+
+         // Check if game is over
+         if (lettersRemainingCounter == 0)
+         {
+            statusLabel.Text = "You win";
+            giveMeAHintToolStripMenuItem.Visible = false;
+            giveUpToolStripMenuItem.Visible = false;
+         }
+      }
+
+      // Actions performed when the Start New Game menu item is clicked
       private void startNewGameToolStripMenuItem_Click(object sender, EventArgs e)
       {
+         // Enable letter buttons
          for (int i = 0; i < 26; i++)
          {
             charButtons[i].Enabled = true;
             charButtons[i].BackColor = Color.FromArgb(202, 234, 189);
          }
 
+         // Let game playing menu items be visible
+         giveMeAHintToolStripMenuItem.Visible = true;
+         giveUpToolStripMenuItem.Visible = true;
+
+         // Select a new SercetWord
          wordFile.setSecretWord();
+         lettersRemainingCounter = wordFile.SecretWord.Length;
          statusLabel.Text = string.Format("Your new word has {0} letters", wordFile.SecretWord.Length);
 
+         // Clear SecretWord display
          for (int i = 0; i < maxWordSize; i++)
          {
             wordLabels[i].Text = "";
             wordLabels[i].Visible = false;
          }
 
+         // Make display visible for new SecretWord
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
          {
             wordLabels[i].Visible = true;
          }
       }
 
+      // Actions performed when the View Instructions menu item is clicked
       private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
       {
 
