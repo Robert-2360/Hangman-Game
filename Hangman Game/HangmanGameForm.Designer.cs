@@ -442,6 +442,7 @@
          // 
          this.drawingPictureBox.BackColor = System.Drawing.Color.White;
          this.drawingPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.drawingPictureBox.Image = global::Hangman_Game.Properties.Resources.OpenningMessage;
          this.drawingPictureBox.Location = new System.Drawing.Point(0, 0);
          this.drawingPictureBox.Name = "drawingPictureBox";
          this.drawingPictureBox.Size = new System.Drawing.Size(569, 450);

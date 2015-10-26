@@ -282,7 +282,7 @@ namespace Hangman_Game
       // Actions performed when the View Instructions menu item is clicked
       private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
       {
-
+         drawingPictureBox.Image = Properties.Resources.OpenningMessage;
       }
    }
 }

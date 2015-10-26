@@ -82,6 +82,27 @@
   <ItemGroup>
     <None Include="Resources\HangmanWords.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenningMessage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man5.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man6.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
