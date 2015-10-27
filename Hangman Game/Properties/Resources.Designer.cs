@@ -61,6 +61,36 @@ namespace Hangman_Game.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AliveMan {
+            get {
+                object obj = ResourceManager.GetObject("AliveMan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DeadMan {
+            get {
+                object obj = ResourceManager.GetObject("DeadMan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HangingMessage {
+            get {
+                object obj = ResourceManager.GetObject("HangingMessage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to able
         ///about
         ///above
@@ -137,6 +167,16 @@ namespace Hangman_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Man0 {
+            get {
+                object obj = ResourceManager.GetObject("Man0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Man1 {
             get {
                 object obj = ResourceManager.GetObject("Man1", resourceCulture);
@@ -190,16 +230,6 @@ namespace Hangman_Game.Properties {
         internal static System.Drawing.Bitmap Man6 {
             get {
                 object obj = ResourceManager.GetObject("Man6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OpenningMessage {
-            get {
-                object obj = ResourceManager.GetObject("OpenningMessage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

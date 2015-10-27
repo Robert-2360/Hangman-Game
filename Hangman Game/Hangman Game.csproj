@@ -83,9 +83,6 @@
     <None Include="Resources\HangmanWords.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\OpenningMessage.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Man1.bmp" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +99,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Man6.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HangingMessage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AliveMan.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeadMan.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

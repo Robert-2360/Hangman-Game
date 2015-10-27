@@ -118,8 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AliveMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AliveMan.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeadMan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeadMan.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HangingMessage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HangingMessage.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HangmanWords" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HangmanWords.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Man0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Man0.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Man1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Man1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -138,8 +150,5 @@
   </data>
   <data name="Man6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Man6.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OpenningMessage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OpenningMessage.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

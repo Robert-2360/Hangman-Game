@@ -16,17 +16,23 @@ namespace Hangman_Game
 
       private int lettersRemainingCounter;
       private int lettersWrongCounter;
+      private int maximumWrongChoices;
 
       private Label[] wordLabels;
       private int maxWordSize = 9;
 
       private Button[] charButtons;
+      private int numberOfButtons = 26;
+
+      private Image[] hangingMans;
+      private int numberOfImages = 8;
 
       public HangmanGameForm()
       {
          InitializeComponent();
 
          wordFile = new WordFile();
+         maximumWrongChoices = 7;
 
          // Initialize label array for SecretWord letters display
          wordLabels = new Label[maxWordSize];
@@ -41,7 +47,7 @@ namespace Hangman_Game
          wordLabels[8] = wordChar8;
 
          // Initialize button array for letter choices box
-         charButtons = new Button[26];
+         charButtons = new Button[numberOfButtons];
          charButtons[0] = aCharButton;
          charButtons[1] = bCharButton;
          charButtons[2] = cCharButton;
@@ -68,6 +74,16 @@ namespace Hangman_Game
          charButtons[23] = xCharButton;
          charButtons[24] = yCharButton;
          charButtons[25] = zCharButton;
+
+         hangingMans = new Image[numberOfImages];
+         hangingMans[0] = Properties.Resources.Man0;
+         hangingMans[1] = Properties.Resources.Man1;
+         hangingMans[2] = Properties.Resources.Man2;
+         hangingMans[3] = Properties.Resources.Man3;
+         hangingMans[4] = Properties.Resources.Man4;
+         hangingMans[5] = Properties.Resources.Man5;
+         hangingMans[6] = Properties.Resources.Man6;
+         hangingMans[7] = Properties.Resources.DeadMan;
       }
 
       // The following 26 methods are for each letter choice button
@@ -221,25 +237,49 @@ namespace Hangman_Game
             }
          }
 
-         // Count the number of letter not in the SecretWord
-         if (!letterFound) lettersWrongCounter++;
+         // If letter selected is wrong increment counter and image
+         if (!letterFound)
+         {
+            lettersWrongCounter++;
+            drawingPictureBox.Image = hangingMans[lettersWrongCounter];
+         }
 
          // Update status label
          statusLabel.Text = string.Format("Remaining: {0} Letters wrong: {1}",
             lettersRemainingCounter, lettersWrongCounter);
 
-         // Check if game is over
+         // Determine if game was been won
          if (lettersRemainingCounter == 0)
          {
             statusLabel.Text = "You win";
-            giveMeAHintToolStripMenuItem.Visible = false;
-            giveUpToolStripMenuItem.Visible = false;
+            drawingPictureBox.Image = Properties.Resources.AliveMan;
+            gameOver();
+         }
 
-            // Disable remaining letter buttons
-            for (int i = 0; i < 26; i++)
+         // Determine if game is lost
+         if (lettersWrongCounter == maximumWrongChoices)
+         {
+            statusLabel.Text = "You have hung your man";
+            gameOver();
+
+            // Display the SecretWord
+            for (int i = 0; i < wordFile.SecretWord.Length; i++)
             {
-               charButtons[i].Enabled = false;
+               wordLabels[i].Text = wordFile.SecretWord.Substring(i, 1);
             }
+         }
+      }
+
+      // Common actions performed when game is over
+      private void gameOver()
+      {
+         giveMeAHintToolStripMenuItem.Visible = false;
+         giveUpToolStripMenuItem.Visible = false;
+
+         // Disable remaining letter buttons
+         for (int i = 0; i < 26; i++)
+         {
+            charButtons[i].Enabled = false;
          }
       }
 
@@ -277,12 +317,15 @@ namespace Hangman_Game
          {
             wordLabels[i].Visible = true;
          }
+
+         // Starting new game image
+         drawingPictureBox.Image = Properties.Resources.Man0;
       }
 
       // Actions performed when the View Instructions menu item is clicked
       private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         drawingPictureBox.Image = Properties.Resources.OpenningMessage;
+         
       }
    }
 }
