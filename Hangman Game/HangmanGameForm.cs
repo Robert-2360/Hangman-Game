@@ -273,9 +273,6 @@ namespace Hangman_Game
       // Common actions performed when game is over
       private void gameOver()
       {
-         giveMeAHintToolStripMenuItem.Visible = false;
-         giveUpToolStripMenuItem.Visible = false;
-
          // Disable remaining letter buttons
          for (int i = 0; i < 26; i++)
          {
@@ -295,10 +292,6 @@ namespace Hangman_Game
             charButtons[i].Enabled = true;
             charButtons[i].BackColor = Color.FromArgb(202, 234, 189);
          }
-
-         // Let game playing menu items be visible
-         giveMeAHintToolStripMenuItem.Visible = true;
-         giveUpToolStripMenuItem.Visible = true;
 
          // Select a new SercetWord
          wordFile.setSecretWord();
