@@ -12,11 +12,18 @@ namespace Hangman_Game
 {
    public partial class HangmanGameForm : Form
    {
+      public HangmanGameForm()
+      {
+         InitializeComponent();
+      }
+
+      // Declare or initialize class variables
+
       private WordFile wordFile;
 
       private int lettersRemainingCounter;
       private int lettersWrongCounter;
-      private int maximumWrongChoices;
+      private int maximumWrongChoices = 7;
 
       private Label[] wordLabels;
       private int maxWordSize = 9;
@@ -27,12 +34,10 @@ namespace Hangman_Game
       private Image[] hangingMans;
       private int numberOfImages = 8;
 
-      public HangmanGameForm()
+      private void HangmanGameForm_Load(object sender, EventArgs e)
       {
-         InitializeComponent();
-
          wordFile = new WordFile();
-         maximumWrongChoices = 7;
+         nextInstructionButton.Visible = false;
 
          // Initialize label array for SecretWord letters display
          wordLabels = new Label[maxWordSize];
@@ -75,6 +80,7 @@ namespace Hangman_Game
          charButtons[24] = yCharButton;
          charButtons[25] = zCharButton;
 
+         // Initialize image array for hangman drawing sections
          hangingMans = new Image[numberOfImages];
          hangingMans[0] = Properties.Resources.Man0;
          hangingMans[1] = Properties.Resources.Man1;
@@ -286,6 +292,9 @@ namespace Hangman_Game
          // Reset counter
          lettersWrongCounter = 0;
 
+         // Hide next instruction button
+         nextInstructionButton.Visible = false;
+
          // Enable letter buttons
          for (int i = 0; i < 26; i++)
          {
@@ -318,7 +327,10 @@ namespace Hangman_Game
       // Actions performed when the View Instructions menu item is clicked
       private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         
+         drawingPictureBox.Image = Properties.Resources.Instructions0;
+         nextInstructionButton.Visible = true;
       }
+
+      
    }
 }

@@ -72,6 +72,7 @@
          this.menuStrip1 = new System.Windows.Forms.MenuStrip();
          this.startNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.viewInstrutionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.nextInstructionButton = new System.Windows.Forms.Button();
          this.charsFlowPanel.SuspendLayout();
          this.drawingPanel.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.drawingPictureBox)).BeginInit();
@@ -430,6 +431,7 @@
          // 
          // drawingPanel
          // 
+         this.drawingPanel.Controls.Add(this.nextInstructionButton);
          this.drawingPanel.Controls.Add(this.drawingPictureBox);
          this.drawingPanel.Location = new System.Drawing.Point(12, 31);
          this.drawingPanel.Name = "drawingPanel";
@@ -617,9 +619,19 @@
          // 
          this.viewInstrutionsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
          this.viewInstrutionsToolStripMenuItem.Name = "viewInstrutionsToolStripMenuItem";
-         this.viewInstrutionsToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
-         this.viewInstrutionsToolStripMenuItem.Text = "View Instrutions";
+         this.viewInstrutionsToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+         this.viewInstrutionsToolStripMenuItem.Text = "View Instructions";
          this.viewInstrutionsToolStripMenuItem.Click += new System.EventHandler(this.viewInstrutionsToolStripMenuItem_Click);
+         // 
+         // nextInstructionButton
+         // 
+         this.nextInstructionButton.Font = new System.Drawing.Font("Segoe UI", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.nextInstructionButton.Location = new System.Drawing.Point(405, 358);
+         this.nextInstructionButton.Name = "nextInstructionButton";
+         this.nextInstructionButton.Size = new System.Drawing.Size(137, 65);
+         this.nextInstructionButton.TabIndex = 1;
+         this.nextInstructionButton.Text = "Next\r\nInstruction";
+         this.nextInstructionButton.UseVisualStyleBackColor = true;
          // 
          // HangmanGameForm
          // 
@@ -636,6 +648,7 @@
          this.MaximizeBox = false;
          this.Name = "HangmanGameForm";
          this.Text = "Hangman Game";
+         this.Load += new System.EventHandler(this.HangmanGameForm_Load);
          this.charsFlowPanel.ResumeLayout(false);
          this.drawingPanel.ResumeLayout(false);
          ((System.ComponentModel.ISupportInitialize)(this.drawingPictureBox)).EndInit();
@@ -694,6 +707,7 @@
       private System.Windows.Forms.MenuStrip menuStrip1;
       private System.Windows.Forms.ToolStripMenuItem startNewGameToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem viewInstrutionsToolStripMenuItem;
+      private System.Windows.Forms.Button nextInstructionButton;
    }
 }
 
