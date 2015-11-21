@@ -24,6 +24,7 @@ namespace Hangman_Game
       private int lettersRemainingCounter;
       private int lettersWrongCounter;
       private int maximumWrongChoices = 7;
+     
 
       private Label[] wordLabels;
       private int maxWordSize = 9;
@@ -31,9 +32,14 @@ namespace Hangman_Game
       private Button[] charButtons;
       private int numberOfButtons = 26;
 
-      private Image[] hangingMans;
-      private int numberOfImages = 8;
+      private Image[] hangingManImages;
+      private int numberOfManImages = 8;
 
+      private Image[] instructionImages;
+      private int numberOfInstructionImages = 3;
+      private int instructionImageCounter;
+
+      // Actions preformed when game form is first loaded
       private void HangmanGameForm_Load(object sender, EventArgs e)
       {
          wordFile = new WordFile();
@@ -81,15 +87,21 @@ namespace Hangman_Game
          charButtons[25] = zCharButton;
 
          // Initialize image array for hangman drawing sections
-         hangingMans = new Image[numberOfImages];
-         hangingMans[0] = Properties.Resources.Man0;
-         hangingMans[1] = Properties.Resources.Man1;
-         hangingMans[2] = Properties.Resources.Man2;
-         hangingMans[3] = Properties.Resources.Man3;
-         hangingMans[4] = Properties.Resources.Man4;
-         hangingMans[5] = Properties.Resources.Man5;
-         hangingMans[6] = Properties.Resources.Man6;
-         hangingMans[7] = Properties.Resources.DeadMan;
+         hangingManImages = new Image[numberOfManImages];
+         hangingManImages[0] = Properties.Resources.Man0;
+         hangingManImages[1] = Properties.Resources.Man1;
+         hangingManImages[2] = Properties.Resources.Man2;
+         hangingManImages[3] = Properties.Resources.Man3;
+         hangingManImages[4] = Properties.Resources.Man4;
+         hangingManImages[5] = Properties.Resources.Man5;
+         hangingManImages[6] = Properties.Resources.Man6;
+         hangingManImages[7] = Properties.Resources.DeadMan;
+
+         // Initialize image array for instruction images
+         instructionImages = new Image[numberOfInstructionImages];
+         instructionImages[0] = Properties.Resources.Instructions0;
+         instructionImages[1] = Properties.Resources.Instructions1;
+         instructionImages[2] = Properties.Resources.Instructions2;
       }
 
       // The following 26 methods are for each letter choice button
@@ -247,7 +259,7 @@ namespace Hangman_Game
          if (!letterFound)
          {
             lettersWrongCounter++;
-            drawingPictureBox.Image = hangingMans[lettersWrongCounter];
+            drawingPictureBox.Image = hangingManImages[lettersWrongCounter];
          }
 
          // Update status label
@@ -327,8 +339,18 @@ namespace Hangman_Game
       // Actions performed when the View Instructions menu item is clicked
       private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         drawingPictureBox.Image = Properties.Resources.Instructions0;
+         drawingPictureBox.Image = instructionImages[0];
          nextInstructionButton.Visible = true;
+         instructionImageCounter = 0;
+      }
+
+      // Actions performed when the Next Instruction button is clicked
+      private void nextInstructionButton_Click(object sender, EventArgs e)
+      {
+         // Cycles through the instruction images
+         instructionImageCounter++;
+         if (instructionImageCounter == numberOfInstructionImages) instructionImageCounter = 0;
+         drawingPictureBox.Image = instructionImages[instructionImageCounter];
       }
 
       

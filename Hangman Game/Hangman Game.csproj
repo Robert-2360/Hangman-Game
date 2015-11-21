@@ -113,10 +113,13 @@
     <None Include="Resources\DeadMan.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Instructions4.bmp" />
+    <None Include="Resources\Instructions0.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Instructions0.bmp" />
+    <None Include="Resources\Instructions1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Instructions2.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

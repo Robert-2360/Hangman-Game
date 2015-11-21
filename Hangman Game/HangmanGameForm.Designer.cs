@@ -56,6 +56,7 @@
          this.yCharButton = new System.Windows.Forms.Button();
          this.zCharButton = new System.Windows.Forms.Button();
          this.drawingPanel = new System.Windows.Forms.Panel();
+         this.nextInstructionButton = new System.Windows.Forms.Button();
          this.drawingPictureBox = new System.Windows.Forms.PictureBox();
          this.wordPanel = new System.Windows.Forms.Panel();
          this.wordChar8 = new System.Windows.Forms.Label();
@@ -72,7 +73,6 @@
          this.menuStrip1 = new System.Windows.Forms.MenuStrip();
          this.startNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.viewInstrutionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.nextInstructionButton = new System.Windows.Forms.Button();
          this.charsFlowPanel.SuspendLayout();
          this.drawingPanel.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.drawingPictureBox)).BeginInit();
@@ -438,6 +438,17 @@
          this.drawingPanel.Size = new System.Drawing.Size(569, 450);
          this.drawingPanel.TabIndex = 1;
          // 
+         // nextInstructionButton
+         // 
+         this.nextInstructionButton.Font = new System.Drawing.Font("Segoe UI", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.nextInstructionButton.Location = new System.Drawing.Point(405, 358);
+         this.nextInstructionButton.Name = "nextInstructionButton";
+         this.nextInstructionButton.Size = new System.Drawing.Size(137, 65);
+         this.nextInstructionButton.TabIndex = 1;
+         this.nextInstructionButton.Text = "Next\r\nInstruction";
+         this.nextInstructionButton.UseVisualStyleBackColor = true;
+         this.nextInstructionButton.Click += new System.EventHandler(this.nextInstructionButton_Click);
+         // 
          // drawingPictureBox
          // 
          this.drawingPictureBox.BackColor = System.Drawing.Color.White;
@@ -622,16 +633,6 @@
          this.viewInstrutionsToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
          this.viewInstrutionsToolStripMenuItem.Text = "View Instructions";
          this.viewInstrutionsToolStripMenuItem.Click += new System.EventHandler(this.viewInstrutionsToolStripMenuItem_Click);
-         // 
-         // nextInstructionButton
-         // 
-         this.nextInstructionButton.Font = new System.Drawing.Font("Segoe UI", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.nextInstructionButton.Location = new System.Drawing.Point(405, 358);
-         this.nextInstructionButton.Name = "nextInstructionButton";
-         this.nextInstructionButton.Size = new System.Drawing.Size(137, 65);
-         this.nextInstructionButton.TabIndex = 1;
-         this.nextInstructionButton.Text = "Next\r\nInstruction";
-         this.nextInstructionButton.UseVisualStyleBackColor = true;
          // 
          // HangmanGameForm
          // 
