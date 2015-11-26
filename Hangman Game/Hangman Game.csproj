@@ -47,7 +47,7 @@
     <Compile Include="HangmanGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HangmanGameForm.Designer.cs">
+    <Compile Include="HangmanGameForm.designer.cs">
       <DependentUpon>HangmanGameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainStart.cs" />

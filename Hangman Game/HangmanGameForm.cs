@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿// Final Project: Hangman Game
+// Class: HangmanGameForm
+
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hangman_Game
@@ -18,26 +15,24 @@ namespace Hangman_Game
       }
 
       // Declare or initialize class variables
-
       private WordFile wordFile;
+
+      private Label[] wordLabels;
+      private Button[] charButtons;
+      private Image[] hangingManImages;
+      private Image[] instructionImages;
 
       private int lettersRemainingCounter;
       private int lettersWrongCounter;
+      private int instructionImageCounter;
+      private int maxWordSize = 9;
+      private int numberOfButtons = 26;
+      private int numberOfManImages = 8;
       private int maximumWrongChoices = 7;
      
-
-      private Label[] wordLabels;
-      private int maxWordSize = 9;
-
-      private Button[] charButtons;
-      private int numberOfButtons = 26;
-
-      private Image[] hangingManImages;
-      private int numberOfManImages = 8;
-
-      private Image[] instructionImages;
       private int numberOfInstructionImages = 3;
-      private int instructionImageCounter;
+
+      private Color red = Color.FromArgb(255, 232, 235);
 
       // Actions preformed when game form is first loaded
       private void HangmanGameForm_Load(object sender, EventArgs e)
@@ -45,7 +40,7 @@ namespace Hangman_Game
          wordFile = new WordFile();
          nextInstructionButton.Visible = false;
 
-         // Initialize label array for SecretWord letters display
+         // Initialize label array for SecretWord display
          wordLabels = new Label[maxWordSize];
          wordLabels[0] = wordChar0;
          wordLabels[1] = wordChar1;
@@ -104,13 +99,12 @@ namespace Hangman_Game
          instructionImages[2] = Properties.Resources.Instructions2;
       }
 
-      // The following 26 methods are for each letter choice button
+      // The following 26 methods are for each letter button
       private void aCharButton_Click(object sender, EventArgs e)
       {
          buttonClicked(aCharButton);
       }
 
-      // The remaining are identical to the "a" button
       private void bCharButton_Click(object sender, EventArgs e)
       {
          buttonClicked(bCharButton);
@@ -239,11 +233,12 @@ namespace Hangman_Game
       // Actions performed when a letter button is clicked
       private void buttonClicked(Button b)
       {
+         // Reset letter found
          bool letterFound = false;
 
          // Disable button
          b.Enabled = false;
-         b.BackColor = Color.FromArgb(255, 232, 235);
+         b.BackColor = red;
 
          // If present in SecretWord, make that letter visible
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
@@ -272,14 +267,14 @@ namespace Hangman_Game
          {
             statusLabel.Text = "You win";
             drawingPictureBox.Image = Properties.Resources.AliveMan;
-            gameOver();
+            disableLetterButtons();
          }
 
          // Determine if game is lost
          if (lettersWrongCounter == maximumWrongChoices)
          {
             statusLabel.Text = "You have hung your man";
-            gameOver();
+            disableLetterButtons();
 
             // Display the SecretWord
             for (int i = 0; i < wordFile.SecretWord.Length; i++)
@@ -289,11 +284,10 @@ namespace Hangman_Game
          }
       }
 
-      // Common actions performed when game is over
-      private void gameOver()
+      // Disable all letter buttons
+      private void disableLetterButtons()
       {
-         // Disable remaining letter buttons
-         for (int i = 0; i < 26; i++)
+         for (int i = 0; i < numberOfButtons; i++)
          {
             charButtons[i].Enabled = false;
          }
