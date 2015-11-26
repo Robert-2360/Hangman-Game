@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Final Project: Hangman Game
+// Class WordFile
+// Places a text file into a string array for the game
+
+using System;
 
 namespace Hangman_Game
 {
@@ -10,28 +10,25 @@ namespace Hangman_Game
    {
       private string[] words;
 
-      private string _secretWord;
-      public string SecretWord
-      {
-         get { return _secretWord; }
-      }
-
-      public void setSecretWord()
-      {
-         Random random = new Random();
-         int randomNumber = random.Next(words.Length);
-         _secretWord = words[randomNumber];
-      }
+      public string SecretWord { get; set; }
 
       public WordFile()
       {
          string file = Properties.Resources.HangmanWords;
          words = file.Split('\n');
 
+         // Removes the space at the end for each word
          for (int i = 0; i < words.Length; i++)
          {
             words[i] = words[i].TrimEnd();
          }
+      }
+
+      public void selectRandomSecretWord()
+      {
+         Random random = new Random();
+         int randomNumber = random.Next(words.Length);
+         SecretWord = words[randomNumber];
       }
    }
 }
