@@ -110,6 +110,7 @@ namespace Hangman_Game
          buttonClicked(aCharButton);
       }
 
+      // The remaining are identical to the "a" button
       private void bCharButton_Click(object sender, EventArgs e)
       {
          buttonClicked(bCharButton);
