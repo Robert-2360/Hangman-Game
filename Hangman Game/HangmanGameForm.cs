@@ -29,10 +29,10 @@ namespace Hangman_Game
       private int numberOfButtons = 26;
       private int numberOfManImages = 8;
       private int maximumWrongChoices = 7;
-     
       private int numberOfInstructionImages = 3;
 
       private Color red = Color.FromArgb(255, 232, 235);
+      private Color green = Color.FromArgb(202, 234, 189);
 
       // Actions preformed when game form is first loaded
       private void HangmanGameForm_Load(object sender, EventArgs e)
@@ -100,147 +100,44 @@ namespace Hangman_Game
       }
 
       // The following 26 methods are for each letter button
-      private void aCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(aCharButton);
-      }
-
-      private void bCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(bCharButton);
-      }
-
-      private void cCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(cCharButton);
-      }
-
-      private void dCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(dCharButton);
-      }
-
-      private void eCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(eCharButton);
-      }
-
-      private void fCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(fCharButton);
-      }
-
-      private void gCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(gCharButton);
-      }
-
-      private void hCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(hCharButton);
-      }
-
-      private void iCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(iCharButton);
-      }
-
-      private void jCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(jCharButton);
-      }
-
-      private void kCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(kCharButton);
-      }
-
-      private void lCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(lCharButton);
-      }
-
-      private void mCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(mCharButton);
-      }
-
-      private void nCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(nCharButton);
-      }
-
-      private void oCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(oCharButton);
-      }
-
-      private void pCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(pCharButton);
-      }
-
-      private void qCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(qCharButton);
-      }
-
-      private void rCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(rCharButton);
-      }
-
-      private void sCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(sCharButton);
-      }
-
-      private void tCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(tCharButton);
-      }
-
-      private void uCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(uCharButton);
-      }
-
-      private void vCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(vCharButton);
-      }
-
-      private void wCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(wCharButton);
-      }
-
-      private void xCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(xCharButton);
-      }
-
-      private void yCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(yCharButton);
-      }
-
-      private void zCharButton_Click(object sender, EventArgs e)
-      {
-         buttonClicked(zCharButton);
-      }
+      private void aCharButton_Click(object sender, EventArgs e) { buttonClicked(aCharButton); }
+      private void bCharButton_Click(object sender, EventArgs e) { buttonClicked(bCharButton); }
+      private void cCharButton_Click(object sender, EventArgs e) { buttonClicked(cCharButton); }
+      private void dCharButton_Click(object sender, EventArgs e) { buttonClicked(dCharButton); }
+      private void eCharButton_Click(object sender, EventArgs e) { buttonClicked(eCharButton); }
+      private void fCharButton_Click(object sender, EventArgs e) { buttonClicked(fCharButton); }
+      private void gCharButton_Click(object sender, EventArgs e) { buttonClicked(gCharButton); }
+      private void hCharButton_Click(object sender, EventArgs e) { buttonClicked(hCharButton); }
+      private void iCharButton_Click(object sender, EventArgs e) { buttonClicked(iCharButton); }
+      private void jCharButton_Click(object sender, EventArgs e) { buttonClicked(jCharButton); }
+      private void kCharButton_Click(object sender, EventArgs e) { buttonClicked(kCharButton); }
+      private void lCharButton_Click(object sender, EventArgs e) { buttonClicked(lCharButton); }
+      private void mCharButton_Click(object sender, EventArgs e) { buttonClicked(mCharButton); }
+      private void nCharButton_Click(object sender, EventArgs e) { buttonClicked(nCharButton); }
+      private void oCharButton_Click(object sender, EventArgs e) { buttonClicked(oCharButton); }
+      private void pCharButton_Click(object sender, EventArgs e) { buttonClicked(pCharButton); }
+      private void qCharButton_Click(object sender, EventArgs e) { buttonClicked(qCharButton); }
+      private void rCharButton_Click(object sender, EventArgs e) { buttonClicked(rCharButton); }
+      private void sCharButton_Click(object sender, EventArgs e) { buttonClicked(sCharButton); }
+      private void tCharButton_Click(object sender, EventArgs e) { buttonClicked(tCharButton); }
+      private void uCharButton_Click(object sender, EventArgs e) { buttonClicked(uCharButton); }
+      private void vCharButton_Click(object sender, EventArgs e) { buttonClicked(vCharButton); }
+      private void wCharButton_Click(object sender, EventArgs e) { buttonClicked(wCharButton); }
+      private void xCharButton_Click(object sender, EventArgs e) { buttonClicked(xCharButton); }
+      private void yCharButton_Click(object sender, EventArgs e) { buttonClicked(yCharButton); }
+      private void zCharButton_Click(object sender, EventArgs e) { buttonClicked(zCharButton); }
 
       // Actions performed when a letter button is clicked
       private void buttonClicked(Button b)
       {
-         // Reset letter found
+         // Reset letter found variable
          bool letterFound = false;
 
          // Disable button
          b.Enabled = false;
          b.BackColor = red;
 
-         // If present in SecretWord, make that letter visible
+         // If letter selected is present in SecretWord, make that letter visible
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
          {
             if (wordFile.SecretWord[i] == Convert.ToChar(b.Text))
@@ -251,7 +148,7 @@ namespace Hangman_Game
             }
          }
 
-         // If letter selected is wrong increment counter and image
+         // If letter selected is wrong increment counter and update image
          if (!letterFound)
          {
             lettersWrongCounter++;
@@ -303,32 +200,40 @@ namespace Hangman_Game
          nextInstructionButton.Visible = false;
 
          // Enable letter buttons
-         for (int i = 0; i < 26; i++)
+         for (int i = 0; i < numberOfButtons; i++)
          {
             charButtons[i].Enabled = true;
-            charButtons[i].BackColor = Color.FromArgb(202, 234, 189);
+            charButtons[i].BackColor = green;
          }
 
          // Select a new SercetWord
          wordFile.selectRandomSecretWord();
          lettersRemainingCounter = wordFile.SecretWord.Length;
          statusLabel.Text = string.Format("Your new word has {0} letters", wordFile.SecretWord.Length);
+         clearSecretWordDisplay();
+         makeBlankDisplayVisible();
+         
+         // Reset hanging man image
+         drawingPictureBox.Image = Properties.Resources.Man0;
+      }
 
-         // Clear SecretWord display
+      // Clear SecretWord display
+      private void clearSecretWordDisplay()
+      {
          for (int i = 0; i < maxWordSize; i++)
          {
             wordLabels[i].Text = "";
             wordLabels[i].Visible = false;
          }
+      }
 
-         // Make display visible for new SecretWord
+      // Make display visible for new SecretWord
+      private void makeBlankDisplayVisible()
+      {
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
          {
             wordLabels[i].Visible = true;
          }
-
-         // Starting new game image
-         drawingPictureBox.Image = Properties.Resources.Man0;
       }
 
       // Actions performed when the View Instructions menu item is clicked
@@ -347,7 +252,5 @@ namespace Hangman_Game
          if (instructionImageCounter == numberOfInstructionImages) instructionImageCounter = 0;
          drawingPictureBox.Image = instructionImages[instructionImageCounter];
       }
-
-      
    }
 }
