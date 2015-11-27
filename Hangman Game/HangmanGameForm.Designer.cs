@@ -119,6 +119,7 @@
          // aCharButton
          // 
          this.aCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.aCharButton.Enabled = false;
          this.aCharButton.Location = new System.Drawing.Point(3, 3);
          this.aCharButton.Name = "aCharButton";
          this.aCharButton.Size = new System.Drawing.Size(70, 70);
@@ -131,6 +132,7 @@
          // bCharButton
          // 
          this.bCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.bCharButton.Enabled = false;
          this.bCharButton.Location = new System.Drawing.Point(79, 3);
          this.bCharButton.Name = "bCharButton";
          this.bCharButton.Size = new System.Drawing.Size(70, 70);
@@ -143,6 +145,7 @@
          // cCharButton
          // 
          this.cCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.cCharButton.Enabled = false;
          this.cCharButton.Location = new System.Drawing.Point(155, 3);
          this.cCharButton.Name = "cCharButton";
          this.cCharButton.Size = new System.Drawing.Size(70, 70);
@@ -155,6 +158,7 @@
          // dCharButton
          // 
          this.dCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.dCharButton.Enabled = false;
          this.dCharButton.Location = new System.Drawing.Point(231, 3);
          this.dCharButton.Name = "dCharButton";
          this.dCharButton.Size = new System.Drawing.Size(70, 70);
@@ -167,6 +171,7 @@
          // eCharButton
          // 
          this.eCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.eCharButton.Enabled = false;
          this.eCharButton.Location = new System.Drawing.Point(307, 3);
          this.eCharButton.Name = "eCharButton";
          this.eCharButton.Size = new System.Drawing.Size(70, 70);
@@ -179,6 +184,7 @@
          // fCharButton
          // 
          this.fCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.fCharButton.Enabled = false;
          this.fCharButton.Location = new System.Drawing.Point(3, 79);
          this.fCharButton.Name = "fCharButton";
          this.fCharButton.Size = new System.Drawing.Size(70, 70);
@@ -191,6 +197,7 @@
          // gCharButton
          // 
          this.gCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.gCharButton.Enabled = false;
          this.gCharButton.Location = new System.Drawing.Point(79, 79);
          this.gCharButton.Name = "gCharButton";
          this.gCharButton.Size = new System.Drawing.Size(70, 70);
@@ -203,6 +210,7 @@
          // hCharButton
          // 
          this.hCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.hCharButton.Enabled = false;
          this.hCharButton.Location = new System.Drawing.Point(155, 79);
          this.hCharButton.Name = "hCharButton";
          this.hCharButton.Size = new System.Drawing.Size(70, 70);
@@ -215,6 +223,7 @@
          // iCharButton
          // 
          this.iCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.iCharButton.Enabled = false;
          this.iCharButton.Location = new System.Drawing.Point(231, 79);
          this.iCharButton.Name = "iCharButton";
          this.iCharButton.Size = new System.Drawing.Size(70, 70);
@@ -227,6 +236,7 @@
          // jCharButton
          // 
          this.jCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.jCharButton.Enabled = false;
          this.jCharButton.Location = new System.Drawing.Point(307, 79);
          this.jCharButton.Name = "jCharButton";
          this.jCharButton.Size = new System.Drawing.Size(70, 70);
@@ -239,6 +249,7 @@
          // kCharButton
          // 
          this.kCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.kCharButton.Enabled = false;
          this.kCharButton.Location = new System.Drawing.Point(3, 155);
          this.kCharButton.Name = "kCharButton";
          this.kCharButton.Size = new System.Drawing.Size(70, 70);
@@ -251,6 +262,7 @@
          // lCharButton
          // 
          this.lCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.lCharButton.Enabled = false;
          this.lCharButton.Location = new System.Drawing.Point(79, 155);
          this.lCharButton.Name = "lCharButton";
          this.lCharButton.Size = new System.Drawing.Size(70, 70);
@@ -263,6 +275,7 @@
          // mCharButton
          // 
          this.mCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.mCharButton.Enabled = false;
          this.mCharButton.Location = new System.Drawing.Point(155, 155);
          this.mCharButton.Name = "mCharButton";
          this.mCharButton.Size = new System.Drawing.Size(70, 70);
@@ -275,6 +288,7 @@
          // nCharButton
          // 
          this.nCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.nCharButton.Enabled = false;
          this.nCharButton.Location = new System.Drawing.Point(231, 155);
          this.nCharButton.Name = "nCharButton";
          this.nCharButton.Size = new System.Drawing.Size(70, 70);
@@ -287,6 +301,7 @@
          // oCharButton
          // 
          this.oCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.oCharButton.Enabled = false;
          this.oCharButton.Location = new System.Drawing.Point(307, 155);
          this.oCharButton.Name = "oCharButton";
          this.oCharButton.Size = new System.Drawing.Size(70, 70);
@@ -299,6 +314,7 @@
          // pCharButton
          // 
          this.pCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.pCharButton.Enabled = false;
          this.pCharButton.Location = new System.Drawing.Point(3, 231);
          this.pCharButton.Name = "pCharButton";
          this.pCharButton.Size = new System.Drawing.Size(70, 70);
@@ -311,6 +327,7 @@
          // qCharButton
          // 
          this.qCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.qCharButton.Enabled = false;
          this.qCharButton.Location = new System.Drawing.Point(79, 231);
          this.qCharButton.Name = "qCharButton";
          this.qCharButton.Size = new System.Drawing.Size(70, 70);
@@ -323,6 +340,7 @@
          // rCharButton
          // 
          this.rCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.rCharButton.Enabled = false;
          this.rCharButton.Location = new System.Drawing.Point(155, 231);
          this.rCharButton.Name = "rCharButton";
          this.rCharButton.Size = new System.Drawing.Size(70, 70);
@@ -335,6 +353,7 @@
          // sCharButton
          // 
          this.sCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.sCharButton.Enabled = false;
          this.sCharButton.Location = new System.Drawing.Point(231, 231);
          this.sCharButton.Name = "sCharButton";
          this.sCharButton.Size = new System.Drawing.Size(70, 70);
@@ -347,6 +366,7 @@
          // tCharButton
          // 
          this.tCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.tCharButton.Enabled = false;
          this.tCharButton.Location = new System.Drawing.Point(307, 231);
          this.tCharButton.Name = "tCharButton";
          this.tCharButton.Size = new System.Drawing.Size(70, 70);
@@ -359,6 +379,7 @@
          // uCharButton
          // 
          this.uCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.uCharButton.Enabled = false;
          this.uCharButton.Location = new System.Drawing.Point(3, 307);
          this.uCharButton.Name = "uCharButton";
          this.uCharButton.Size = new System.Drawing.Size(70, 70);
@@ -371,6 +392,7 @@
          // vCharButton
          // 
          this.vCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.vCharButton.Enabled = false;
          this.vCharButton.Location = new System.Drawing.Point(79, 307);
          this.vCharButton.Name = "vCharButton";
          this.vCharButton.Size = new System.Drawing.Size(70, 70);
@@ -383,6 +405,7 @@
          // wCharButton
          // 
          this.wCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.wCharButton.Enabled = false;
          this.wCharButton.Location = new System.Drawing.Point(155, 307);
          this.wCharButton.Name = "wCharButton";
          this.wCharButton.Size = new System.Drawing.Size(70, 70);
@@ -395,6 +418,7 @@
          // xCharButton
          // 
          this.xCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.xCharButton.Enabled = false;
          this.xCharButton.Location = new System.Drawing.Point(231, 307);
          this.xCharButton.Name = "xCharButton";
          this.xCharButton.Size = new System.Drawing.Size(70, 70);
@@ -407,6 +431,7 @@
          // yCharButton
          // 
          this.yCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.yCharButton.Enabled = false;
          this.yCharButton.Location = new System.Drawing.Point(307, 307);
          this.yCharButton.Name = "yCharButton";
          this.yCharButton.Size = new System.Drawing.Size(70, 70);
@@ -419,6 +444,7 @@
          // zCharButton
          // 
          this.zCharButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.zCharButton.Enabled = false;
          this.zCharButton.Location = new System.Drawing.Point(115, 383);
          this.zCharButton.Margin = new System.Windows.Forms.Padding(115, 3, 3, 3);
          this.zCharButton.Name = "zCharButton";
