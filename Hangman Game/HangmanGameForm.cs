@@ -200,11 +200,7 @@ namespace Hangman_Game
          nextInstructionButton.Visible = false;
 
          // Enable letter buttons
-         for (int i = 0; i < numberOfButtons; i++)
-         {
-            charButtons[i].Enabled = true;
-            charButtons[i].BackColor = green;
-         }
+         enableLetterButtons();
 
          // Select a new SercetWord
          wordFile.selectRandomSecretWord();
@@ -215,6 +211,16 @@ namespace Hangman_Game
          
          // Reset hanging man image
          drawingPictureBox.Image = Properties.Resources.Man0;
+      }
+
+      // Enable letter buttons
+      private void enableLetterButtons()
+      {
+         for (int i = 0; i < numberOfButtons; i++)
+         {
+            charButtons[i].Enabled = true;
+            charButtons[i].BackColor = green;
+         }
       }
 
       // Clear SecretWord display
