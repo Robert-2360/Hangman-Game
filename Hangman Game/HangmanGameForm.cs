@@ -140,9 +140,12 @@ namespace Hangman_Game
          // If letter selected is present in SecretWord, make that letter visible
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
          {
-            if (wordFile.SecretWord[i] == Convert.ToChar(b.Text))
+            // Convert SecretWord character into a single letter string
+            string letter = new string(wordFile.SecretWord[i], 1);
+            // Check if SecretWord character matches button seleted
+            if (letter == b.Text)
             {
-               wordLabels[i].Text = b.Text;
+               wordLabels[i].Text = letter;
                lettersRemainingCounter--;
                letterFound = true;
             }
@@ -172,21 +175,7 @@ namespace Hangman_Game
          {
             statusLabel.Text = "You have hung your man";
             disableLetterButtons();
-
-            // Display the SecretWord
-            for (int i = 0; i < wordFile.SecretWord.Length; i++)
-            {
-               wordLabels[i].Text = wordFile.SecretWord.Substring(i, 1);
-            }
-         }
-      }
-
-      // Disable all letter buttons
-      private void disableLetterButtons()
-      {
-         for (int i = 0; i < numberOfButtons; i++)
-         {
-            charButtons[i].Enabled = false;
+            displaySecretWord();
          }
       }
 
@@ -211,6 +200,44 @@ namespace Hangman_Game
          
          // Reset hanging man image
          drawingPictureBox.Image = Properties.Resources.Man0;
+      }
+
+      // Actions performed when the View Instructions menu item is clicked
+      private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+         drawingPictureBox.Image = instructionImages[0];
+         nextInstructionButton.Visible = true;
+         instructionImageCounter = 0;
+      }
+
+      // Actions performed when the Next Instruction button is clicked
+      private void nextInstructionButton_Click(object sender, EventArgs e)
+      {
+         // Cycles through the instruction images
+         instructionImageCounter++;
+         if (instructionImageCounter == numberOfInstructionImages) instructionImageCounter = 0;
+         drawingPictureBox.Image = instructionImages[instructionImageCounter];
+      }
+
+
+      /***** The following are helper methods *****/
+
+      // Disable all letter buttons
+      private void disableLetterButtons()
+      {
+         for (int i = 0; i < numberOfButtons; i++)
+         {
+            charButtons[i].Enabled = false;
+         }
+      }
+
+      // Display the SecretWord
+      private void displaySecretWord()
+      {
+         for (int i = 0; i < wordFile.SecretWord.Length; i++)
+         {
+            wordLabels[i].Text = wordFile.SecretWord.Substring(i, 1);
+         }
       }
 
       // Enable letter buttons
@@ -240,23 +267,6 @@ namespace Hangman_Game
          {
             wordLabels[i].Visible = true;
          }
-      }
-
-      // Actions performed when the View Instructions menu item is clicked
-      private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
-      {
-         drawingPictureBox.Image = instructionImages[0];
-         nextInstructionButton.Visible = true;
-         instructionImageCounter = 0;
-      }
-
-      // Actions performed when the Next Instruction button is clicked
-      private void nextInstructionButton_Click(object sender, EventArgs e)
-      {
-         // Cycles through the instruction images
-         instructionImageCounter++;
-         if (instructionImageCounter == numberOfInstructionImages) instructionImageCounter = 0;
-         drawingPictureBox.Image = instructionImages[instructionImageCounter];
       }
    }
 }
