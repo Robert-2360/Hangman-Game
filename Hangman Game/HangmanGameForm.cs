@@ -192,10 +192,10 @@ namespace Hangman_Game
          enableLetterButtons();
 
          // Select a new SercetWord
+         clearSecretWordDisplay();
          wordFile.selectRandomSecretWord();
          lettersRemainingCounter = wordFile.SecretWord.Length;
          statusLabel.Text = string.Format("Your new word has {0} letters", wordFile.SecretWord.Length);
-         clearSecretWordDisplay();
          makeBlankDisplayVisible();
          
          // Reset hanging man image
@@ -208,6 +208,12 @@ namespace Hangman_Game
          drawingPictureBox.Image = instructionImages[0];
          nextInstructionButton.Visible = true;
          instructionImageCounter = 0;
+
+         // Set "hangman" as a visible SecretWord
+         clearSecretWordDisplay();
+         wordFile.SecretWord = "hangman";
+         makeBlankDisplayVisible();
+         displaySecretWord();
       }
 
       // Actions performed when the Next Instruction button is clicked
@@ -231,16 +237,7 @@ namespace Hangman_Game
          }
       }
 
-      // Display the SecretWord
-      private void displaySecretWord()
-      {
-         for (int i = 0; i < wordFile.SecretWord.Length; i++)
-         {
-            wordLabels[i].Text = wordFile.SecretWord.Substring(i, 1);
-         }
-      }
-
-      // Enable letter buttons
+      // Enable all letter buttons
       private void enableLetterButtons()
       {
          for (int i = 0; i < numberOfButtons; i++)
@@ -266,6 +263,15 @@ namespace Hangman_Game
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
          {
             wordLabels[i].Visible = true;
+         }
+      }
+
+      // Display the SecretWord
+      private void displaySecretWord()
+      {
+         for (int i = 0; i < wordFile.SecretWord.Length; i++)
+         {
+            wordLabels[i].Text = wordFile.SecretWord.Substring(i, 1);
          }
       }
    }
