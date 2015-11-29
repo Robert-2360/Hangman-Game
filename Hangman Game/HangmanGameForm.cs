@@ -97,6 +97,12 @@ namespace Hangman_Game
          instructionImages[0] = Properties.Resources.Instructions0;
          instructionImages[1] = Properties.Resources.Instructions1;
          instructionImages[2] = Properties.Resources.Instructions2;
+
+         // Display "welcome" in wordLabel array
+         clearSecretWordDisplay();
+         wordFile.SecretWord = "welcome";
+         makeBlankDisplayVisible();
+         displaySecretWord();
       }
 
       // The following 26 methods are for each letter button
@@ -208,6 +214,7 @@ namespace Hangman_Game
          drawingPictureBox.Image = instructionImages[0];
          nextInstructionButton.Visible = true;
          instructionImageCounter = 0;
+         disableLetterButtons();
 
          // Set "hangman" as a visible SecretWord
          clearSecretWordDisplay();
