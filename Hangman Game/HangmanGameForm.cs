@@ -146,18 +146,24 @@ namespace Hangman_Game
          // If letter selected is present in SecretWord, make that letter visible
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
          {
-            // Convert SecretWord character into a single letter string
-            string letter = new string(wordFile.SecretWord[i], 1);
-            // Check if SecretWord character matches button seleted
-            if (letter == b.Text)
+            // Initialize char variables for comparison
+            char charInSecretWord = wordFile.SecretWord[i];
+            char charOnButtonSelected = Convert.ToChar(b.Text);
+
+            // Check if SecretWord character matches button seleted character
+            if (charInSecretWord == charOnButtonSelected)
             {
-               wordLabels[i].Text = letter;
+               // Assign correct letter choice to proper blank wordLabel array slot
+               // Note: This will make the correct choice visible
+               wordLabels[i].Text = b.Text;
+
+               // Update counter and flip letterFound bool
                lettersRemainingCounter--;
                letterFound = true;
             }
          }
 
-         // If letter selected is wrong increment counter and update image
+         // If letter selected was wrong increment counter and display next hangman image
          if (!letterFound)
          {
             lettersWrongCounter++;
@@ -168,7 +174,7 @@ namespace Hangman_Game
          statusLabel.Text = string.Format("Remaining: {0} Letters wrong: {1}",
             lettersRemainingCounter, lettersWrongCounter);
 
-         // Determine if game was been won
+         // Determine if game has been won
          if (lettersRemainingCounter == 0)
          {
             statusLabel.Text = "You win";
@@ -176,7 +182,7 @@ namespace Hangman_Game
             disableLetterButtons();
          }
 
-         // Determine if game is lost
+         // Determine if game has been lost
          if (lettersWrongCounter == maximumWrongChoices)
          {
             statusLabel.Text = "You have hung your man";
