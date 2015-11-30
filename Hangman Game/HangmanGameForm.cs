@@ -39,6 +39,7 @@ namespace Hangman_Game
       {
          wordFile = new WordFile();
          nextInstructionButton.Visible = false;
+         giveMeAHintToolStripMenuItem.Visible = false;
 
          // Initialize label array for SecretWord display
          wordLabels = new Label[maxWordSize];
@@ -163,11 +164,17 @@ namespace Hangman_Game
             }
          }
 
-         // If letter selected was wrong increment counter and display next hangman image
+         // If letter selected was wrong increment counter, display next hangman image, check for hint
          if (!letterFound)
          {
             lettersWrongCounter++;
             drawingPictureBox.Image = hangingManImages[lettersWrongCounter];
+
+            // If eligible for a hint, make menu button visible
+            if (lettersWrongCounter == maximumWrongChoices - 1 && lettersRemainingCounter > 1)
+            {
+               giveMeAHintToolStripMenuItem.Visible = true;
+            }
          }
 
          // Update status label
@@ -188,6 +195,7 @@ namespace Hangman_Game
             statusLabel.Text = "You have hung your man";
             disableLetterButtons();
             displaySecretWord();
+            giveMeAHintToolStripMenuItem.Visible = false;
          }
       }
 
@@ -206,10 +214,11 @@ namespace Hangman_Game
          // Select a new SercetWord
          clearSecretWordDisplay();
          wordFile.SecretWord = wordFile.selectRandomSecretWord();
+         // wordFile.SecretWord = "happy";
          lettersRemainingCounter = wordFile.SecretWord.Length;
          statusLabel.Text = string.Format("Your new word has {0} letters", wordFile.SecretWord.Length);
          makeBlankDisplayVisible();
-         
+
          // Reset hanging man image
          drawingPictureBox.Image = Properties.Resources.Man0;
       }
@@ -238,6 +247,19 @@ namespace Hangman_Game
          drawingPictureBox.Image = instructionImages[instructionImageCounter];
       }
 
+      private void giveMeAHintToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+         for (int i = 0; i < wordFile.SecretWord.Length; i++)
+         {
+            int characterCode = wordFile.SecretWord[i] - 97;
+            if (charButtons[characterCode].Enabled)
+            {
+               buttonClicked(charButtons[characterCode]);
+               break;
+            }
+         }
+         giveMeAHintToolStripMenuItem.Visible = false;
+      }
 
       /***** The following are helper methods *****/
 

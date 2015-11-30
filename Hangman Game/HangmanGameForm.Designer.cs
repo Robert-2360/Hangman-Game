@@ -73,6 +73,7 @@
          this.menuStrip1 = new System.Windows.Forms.MenuStrip();
          this.startNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.viewInstrutionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.giveMeAHintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.charsFlowPanel.SuspendLayout();
          this.drawingPanel.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.drawingPictureBox)).BeginInit();
@@ -637,7 +638,8 @@
          this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
          this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startNewGameToolStripMenuItem,
-            this.viewInstrutionsToolStripMenuItem});
+            this.viewInstrutionsToolStripMenuItem,
+            this.giveMeAHintToolStripMenuItem});
          this.menuStrip1.Location = new System.Drawing.Point(0, 0);
          this.menuStrip1.Name = "menuStrip1";
          this.menuStrip1.Size = new System.Drawing.Size(982, 28);
@@ -659,6 +661,14 @@
          this.viewInstrutionsToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
          this.viewInstrutionsToolStripMenuItem.Text = "View Instructions";
          this.viewInstrutionsToolStripMenuItem.Click += new System.EventHandler(this.viewInstrutionsToolStripMenuItem_Click);
+         // 
+         // giveMeAHintToolStripMenuItem
+         // 
+         this.giveMeAHintToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.giveMeAHintToolStripMenuItem.Name = "giveMeAHintToolStripMenuItem";
+         this.giveMeAHintToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+         this.giveMeAHintToolStripMenuItem.Text = "Give me a hint";
+         this.giveMeAHintToolStripMenuItem.Click += new System.EventHandler(this.giveMeAHintToolStripMenuItem_Click);
          // 
          // HangmanGameForm
          // 
@@ -735,6 +745,7 @@
       private System.Windows.Forms.ToolStripMenuItem startNewGameToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem viewInstrutionsToolStripMenuItem;
       private System.Windows.Forms.Button nextInstructionButton;
+      private System.Windows.Forms.ToolStripMenuItem giveMeAHintToolStripMenuItem;
    }
 }
 
