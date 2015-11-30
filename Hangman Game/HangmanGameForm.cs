@@ -205,7 +205,7 @@ namespace Hangman_Game
 
          // Select a new SercetWord
          clearSecretWordDisplay();
-         wordFile.selectRandomSecretWord();
+         wordFile.SecretWord = wordFile.selectRandomSecretWord();
          lettersRemainingCounter = wordFile.SecretWord.Length;
          statusLabel.Text = string.Format("Your new word has {0} letters", wordFile.SecretWord.Length);
          makeBlankDisplayVisible();

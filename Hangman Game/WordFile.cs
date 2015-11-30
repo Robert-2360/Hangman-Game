@@ -30,12 +30,12 @@ namespace Hangman_Game
                   string message = string.Format("Length must be at least {0} characters long.", minimumLength);
                   throw new NonCompliantWordException(message);
                }
-               if (maximumLength < value.Length)
+               else if (maximumLength < value.Length)
                {
                   string message = string.Format("Length must not be greater than {0} characters long.", maximumLength);
                   throw new NonCompliantWordException(message);
                }
-               if (!isAllLowerCase(value))
+               else if (!isAllLowerCase(value))
                {
                   string message = string.Format("Word contains at least one non-lowercase character.");
                   throw new NonCompliantWordException(message);
@@ -68,11 +68,11 @@ namespace Hangman_Game
          }
       }
 
-      public void selectRandomSecretWord()
+      public string selectRandomSecretWord()
       {
          Random random = new Random();
          int randomNumber = random.Next(words.Length);
-         SecretWord = words[randomNumber];
+         return words[randomNumber];
       }
 
       // Returns true if all the characters in the given word are lower case
