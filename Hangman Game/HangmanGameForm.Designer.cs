@@ -74,6 +74,7 @@
          this.startNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.viewInstrutionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.giveMeAHintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.giveUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.charsFlowPanel.SuspendLayout();
          this.drawingPanel.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.drawingPictureBox)).BeginInit();
@@ -639,6 +640,7 @@
          this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startNewGameToolStripMenuItem,
             this.viewInstrutionsToolStripMenuItem,
+            this.giveUpToolStripMenuItem,
             this.giveMeAHintToolStripMenuItem});
          this.menuStrip1.Location = new System.Drawing.Point(0, 0);
          this.menuStrip1.Name = "menuStrip1";
@@ -664,11 +666,19 @@
          // 
          // giveMeAHintToolStripMenuItem
          // 
-         this.giveMeAHintToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
+         this.giveMeAHintToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(125)))), ((int)(((byte)(141)))));
          this.giveMeAHintToolStripMenuItem.Name = "giveMeAHintToolStripMenuItem";
          this.giveMeAHintToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
          this.giveMeAHintToolStripMenuItem.Text = "Give me a hint";
          this.giveMeAHintToolStripMenuItem.Click += new System.EventHandler(this.giveMeAHintToolStripMenuItem_Click);
+         // 
+         // giveUpToolStripMenuItem
+         // 
+         this.giveUpToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(216)))));
+         this.giveUpToolStripMenuItem.Name = "giveUpToolStripMenuItem";
+         this.giveUpToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+         this.giveUpToolStripMenuItem.Text = "Give Up";
+         this.giveUpToolStripMenuItem.Click += new System.EventHandler(this.giveUpToolStripMenuItem_Click);
          // 
          // HangmanGameForm
          // 
@@ -746,6 +756,7 @@
       private System.Windows.Forms.ToolStripMenuItem viewInstrutionsToolStripMenuItem;
       private System.Windows.Forms.Button nextInstructionButton;
       private System.Windows.Forms.ToolStripMenuItem giveMeAHintToolStripMenuItem;
+      private System.Windows.Forms.ToolStripMenuItem giveUpToolStripMenuItem;
    }
 }
 

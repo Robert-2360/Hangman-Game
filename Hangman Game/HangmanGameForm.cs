@@ -39,6 +39,7 @@ namespace Hangman_Game
       {
          wordFile = new WordFile();
          nextInstructionButton.Visible = false;
+         giveUpToolStripMenuItem.Visible = false;
          giveMeAHintToolStripMenuItem.Visible = false;
 
          // Initialize label array for SecretWord display
@@ -164,10 +165,13 @@ namespace Hangman_Game
             }
          }
 
-         // If letter selected was wrong increment counter, display next hangman image, check for hint
+         // If letter selected was wrong then:
          if (!letterFound)
          {
+            // Increment counter
             lettersWrongCounter++;
+
+            // Display next hangman image
             drawingPictureBox.Image = hangingManImages[lettersWrongCounter];
 
             // If eligible for a hint, make menu button visible
@@ -185,6 +189,7 @@ namespace Hangman_Game
          if (lettersRemainingCounter == 0)
          {
             statusLabel.Text = "You win";
+            giveUpToolStripMenuItem.Visible = false;
             drawingPictureBox.Image = Properties.Resources.AliveMan;
             disableLetterButtons();
          }
@@ -195,6 +200,7 @@ namespace Hangman_Game
             statusLabel.Text = "You have hung your man";
             disableLetterButtons();
             displaySecretWord();
+            giveUpToolStripMenuItem.Visible = false;
             giveMeAHintToolStripMenuItem.Visible = false;
          }
       }
@@ -205,6 +211,12 @@ namespace Hangman_Game
          // Reset counter
          lettersWrongCounter = 0;
 
+         // Make visible Give Up menu button visible
+         giveUpToolStripMenuItem.Visible = true;
+
+         // Enable Give Up menu button
+         giveUpToolStripMenuItem.Enabled = true;
+
          // Hide next instruction button
          nextInstructionButton.Visible = false;
 
@@ -214,6 +226,7 @@ namespace Hangman_Game
          // Select a new SercetWord
          clearSecretWordDisplay();
          wordFile.SecretWord = wordFile.selectRandomSecretWord();
+
          // wordFile.SecretWord = "happy";
          lettersRemainingCounter = wordFile.SecretWord.Length;
          statusLabel.Text = string.Format("Your new word has {0} letters", wordFile.SecretWord.Length);
@@ -223,22 +236,41 @@ namespace Hangman_Game
          drawingPictureBox.Image = Properties.Resources.Man0;
       }
 
-      // Actions performed when the View Instructions menu item is clicked
+      // Sets up the View Instructions images for clicking through all instructions
       private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
       {
+         // Display first instruction image
          drawingPictureBox.Image = instructionImages[0];
+
+         // Make visible Give Up menu button visible
+         giveUpToolStripMenuItem.Visible = true;
+
+         // Disable Give Up menu button
+         giveUpToolStripMenuItem.Enabled = false;
+
+         // Make Next Instruction button visible
          nextInstructionButton.Visible = true;
+
+         // Reset count to zero
          instructionImageCounter = 0;
+
+         // Disable all letter buttons
          disableLetterButtons();
 
-         // Set "hangman" as a visible SecretWord
+         // Remove all white Secret Word display label slots
          clearSecretWordDisplay();
+
+         // Set "hangman" as SecretWord
          wordFile.SecretWord = "hangman";
+
+         // Add enough white display slots for "hangman"
          makeBlankDisplayVisible();
+
+         // Display "hangman" as Secret Word
          displaySecretWord();
       }
 
-      // Actions performed when the Next Instruction button is clicked
+      // Actions performed when the Next Instruction menu button is clicked
       private void nextInstructionButton_Click(object sender, EventArgs e)
       {
          // Cycles through the instruction images
@@ -247,17 +279,36 @@ namespace Hangman_Game
          drawingPictureBox.Image = instructionImages[instructionImageCounter];
       }
 
+      // Actions performed when the Give Up menu button is clicked
+      private void giveUpToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+         statusLabel.Text = "You gave up";
+         drawingPictureBox.Image = Properties.Resources.DeadMan;
+         disableLetterButtons();
+         displaySecretWord();
+         giveUpToolStripMenuItem.Visible = false;
+         giveMeAHintToolStripMenuItem.Visible = false;
+      }
+
+      // Click the first correct letter button that has not been used
       private void giveMeAHintToolStripMenuItem_Click(object sender, EventArgs e)
       {
+         // Iterate through the Secret Word
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
          {
+            // Unique character code: a = 0 through z = 25
             int characterCode = wordFile.SecretWord[i] - 97;
+
+            // Check if button was not been clicked
             if (charButtons[characterCode].Enabled)
             {
+               // If not, click the letter button and break iteration
                buttonClicked(charButtons[characterCode]);
                break;
             }
          }
+
+         // Make menu button invisible
          giveMeAHintToolStripMenuItem.Visible = false;
       }
 
