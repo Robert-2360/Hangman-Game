@@ -220,8 +220,9 @@ namespace Hangman_Game
          // Hide next instruction button
          nextInstructionButton.Visible = false;
 
-         // Enable letter buttons
+         // Enable all letter buttons and turn then green
          enableLetterButtons();
+         turnLetterButtonsGreen();
 
          // Select a new SercetWord
          clearSecretWordDisplay();
@@ -242,31 +243,27 @@ namespace Hangman_Game
          // Display first instruction image
          drawingPictureBox.Image = instructionImages[0];
 
-         // Make visible Give Up menu button visible
+         // Make Give Up menu button visible and disabled
          giveUpToolStripMenuItem.Visible = true;
-
-         // Disable Give Up menu button
          giveUpToolStripMenuItem.Enabled = false;
 
          // Make Next Instruction button visible
          nextInstructionButton.Visible = true;
 
+         // Disable all letter buttons and turn them green
+         disableLetterButtons();
+         turnLetterButtonsGreen();
+
+         // Display message in status box
+         statusLabel.Text = "Press Next Instruction";
+
          // Reset count to zero
          instructionImageCounter = 0;
 
-         // Disable all letter buttons
-         disableLetterButtons();
-
-         // Remove all white Secret Word display label slots
-         clearSecretWordDisplay();
-
-         // Set "hangman" as SecretWord
+         // Set and display "hangman" as SecretWord
          wordFile.SecretWord = "hangman";
-
-         // Add enough white display slots for "hangman"
+         clearSecretWordDisplay();
          makeBlankDisplayVisible();
-
-         // Display "hangman" as Secret Word
          displaySecretWord();
       }
 
@@ -329,6 +326,14 @@ namespace Hangman_Game
          for (int i = 0; i < numberOfButtons; i++)
          {
             charButtons[i].Enabled = true;
+         }
+      }
+
+      // Turn all letter buttons green
+      private void turnLetterButtonsGreen()
+      {
+         for (int i = 0; i < numberOfButtons; i++)
+         {
             charButtons[i].BackColor = green;
          }
       }
