@@ -82,6 +82,7 @@
     <None Include="Resources\HangmanWords.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Instructions0.bmp" />
     <None Include="Resources\Man1.bmp" />
   </ItemGroup>
   <ItemGroup>
@@ -110,9 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DeadMan.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Instructions0.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Instructions1.bmp" />
