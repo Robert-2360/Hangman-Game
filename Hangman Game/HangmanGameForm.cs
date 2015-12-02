@@ -33,7 +33,7 @@ namespace Hangman_Game
       private const int NUMBER_OF_BUTTONS = 26;
       private const int NUMBER_OF_HANGMAN_IMAGES = 8;
       private const int MAXIMUM_WRONG_CHOICES = 7;
-      private const int NUMBER_OF_INSTRUCTION_IMAGES = 3;
+      private const int NUMBER_OF_INSTRUCTION_IMAGES = 4;
 
       // Initialize Color constants
       private Color RED = Color.FromArgb(255, 232, 235);
@@ -104,6 +104,7 @@ namespace Hangman_Game
          instructionImages[0] = Properties.Resources.Instructions0;
          instructionImages[1] = Properties.Resources.Instructions1;
          instructionImages[2] = Properties.Resources.Instructions2;
+         instructionImages[3] = Properties.Resources.Instructions3;
 
          // Display "welcome" in wordLabel array
          clearSecretWordDisplay();
@@ -164,8 +165,10 @@ namespace Hangman_Game
                // Note: This will make the correct choice visible
                wordLabels[i].Text = b.Text;
 
-               // Update counter and flip letterFound bool
+               // Update counter
                lettersRemainingCounter--;
+
+               // Set letterFound to true
                letterFound = true;
             }
          }
@@ -210,17 +213,18 @@ namespace Hangman_Game
          }
       }
 
-      // Actions performed when the Start New Game menu item is clicked
+      // Sets up the start of a new game
       private void startNewGameToolStripMenuItem_Click(object sender, EventArgs e)
       {
          // Reset counter
          lettersWrongCounter = 0;
 
-         // Make visible Give Up menu button visible
+         // Make Give Up menu button visible and enabled
          giveUpToolStripMenuItem.Visible = true;
-
-         // Enable Give Up menu button
          giveUpToolStripMenuItem.Enabled = true;
+
+         // Hide give me a hint button
+         giveMeAHintToolStripMenuItem.Visible = false;
 
          // Hide next instruction button
          nextInstructionButton.Visible = false;
@@ -252,6 +256,9 @@ namespace Hangman_Game
          giveUpToolStripMenuItem.Visible = true;
          giveUpToolStripMenuItem.Enabled = false;
 
+         // Hide Give me a hint button
+         giveMeAHintToolStripMenuItem.Visible = false;
+
          // Make Next Instruction button visible
          nextInstructionButton.Visible = true;
 
@@ -272,12 +279,20 @@ namespace Hangman_Game
          displaySecretWord();
       }
 
-      // Actions performed when the Next Instruction menu button is clicked
+      // Cycles through the instruction images
       private void nextInstructionButton_Click(object sender, EventArgs e)
       {
-         // Cycles through the instruction images
          instructionImageCounter++;
          if (instructionImageCounter == NUMBER_OF_INSTRUCTION_IMAGES) instructionImageCounter = 0;
+         if (instructionImageCounter == 3)
+         {
+            giveMeAHintToolStripMenuItem.Visible = true;
+            giveMeAHintToolStripMenuItem.Enabled = false;
+         }
+         else
+         {
+            giveMeAHintToolStripMenuItem.Visible = false;
+         }
          drawingPictureBox.Image = instructionImages[instructionImageCounter];
       }
 
@@ -292,7 +307,7 @@ namespace Hangman_Game
          giveMeAHintToolStripMenuItem.Visible = false;
       }
 
-      // Click the first correct letter button that has not been used
+      // Reveal the first correct letter that has not been used
       private void giveMeAHintToolStripMenuItem_Click(object sender, EventArgs e)
       {
          // Iterate through the Secret Word
