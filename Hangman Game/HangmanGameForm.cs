@@ -14,27 +14,32 @@ namespace Hangman_Game
          InitializeComponent();
       }
 
-      // Declare or initialize class variables
+      // Declare wordFile reference
       private WordFile wordFile;
 
+      // Declare array references
       private Label[] wordLabels;
       private Button[] charButtons;
       private Image[] hangingManImages;
       private Image[] instructionImages;
 
+      // Declare int variables
       private int lettersRemainingCounter;
       private int lettersWrongCounter;
       private int instructionImageCounter;
-      private int maxWordSize = 9;
-      private int numberOfButtons = 26;
-      private int numberOfManImages = 8;
-      private int maximumWrongChoices = 7;
-      private int numberOfInstructionImages = 3;
 
-      private Color red = Color.FromArgb(255, 232, 235);
-      private Color green = Color.FromArgb(202, 234, 189);
+      // Initialize int constants
+      private const int MAXIMUM_WORD_SIZE = 9;
+      private const int NUMBER_OF_BUTTONS = 26;
+      private const int NUMBER_OF_HANGMAN_IMAGES = 8;
+      private const int MAXIMUM_WRONG_CHOICES = 7;
+      private const int NUMBER_OF_INSTRUCTION_IMAGES = 3;
 
-      // Actions preformed when game form is first loaded
+      // Initialize Color constants
+      private Color RED = Color.FromArgb(255, 232, 235);
+      private Color GREEN = Color.FromArgb(202, 234, 189);
+
+      // When game form is first loaded, initialize variables and display "welcome"
       private void HangmanGameForm_Load(object sender, EventArgs e)
       {
          wordFile = new WordFile();
@@ -43,7 +48,7 @@ namespace Hangman_Game
          giveMeAHintToolStripMenuItem.Visible = false;
 
          // Initialize label array for SecretWord display
-         wordLabels = new Label[maxWordSize];
+         wordLabels = new Label[MAXIMUM_WORD_SIZE];
          wordLabels[0] = wordChar0;
          wordLabels[1] = wordChar1;
          wordLabels[2] = wordChar2;
@@ -55,7 +60,7 @@ namespace Hangman_Game
          wordLabels[8] = wordChar8;
 
          // Initialize button array for letter choices box
-         charButtons = new Button[numberOfButtons];
+         charButtons = new Button[NUMBER_OF_BUTTONS];
          charButtons[0] = aCharButton;
          charButtons[1] = bCharButton;
          charButtons[2] = cCharButton;
@@ -84,7 +89,7 @@ namespace Hangman_Game
          charButtons[25] = zCharButton;
 
          // Initialize image array for hangman drawing sections
-         hangingManImages = new Image[numberOfManImages];
+         hangingManImages = new Image[NUMBER_OF_HANGMAN_IMAGES];
          hangingManImages[0] = Properties.Resources.Man0;
          hangingManImages[1] = Properties.Resources.Man1;
          hangingManImages[2] = Properties.Resources.Man2;
@@ -95,7 +100,7 @@ namespace Hangman_Game
          hangingManImages[7] = Properties.Resources.DeadMan;
 
          // Initialize image array for instruction images
-         instructionImages = new Image[numberOfInstructionImages];
+         instructionImages = new Image[NUMBER_OF_INSTRUCTION_IMAGES];
          instructionImages[0] = Properties.Resources.Instructions0;
          instructionImages[1] = Properties.Resources.Instructions1;
          instructionImages[2] = Properties.Resources.Instructions2;
@@ -143,7 +148,7 @@ namespace Hangman_Game
 
          // Disable button
          b.Enabled = false;
-         b.BackColor = red;
+         b.BackColor = RED;
 
          // If letter selected is present in SecretWord, make that letter visible
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
@@ -175,7 +180,7 @@ namespace Hangman_Game
             drawingPictureBox.Image = hangingManImages[lettersWrongCounter];
 
             // If eligible for a hint, make menu button visible
-            if (lettersWrongCounter == maximumWrongChoices - 1 && lettersRemainingCounter > 1)
+            if (lettersWrongCounter == MAXIMUM_WRONG_CHOICES - 1 && lettersRemainingCounter > 1)
             {
                giveMeAHintToolStripMenuItem.Visible = true;
             }
@@ -195,7 +200,7 @@ namespace Hangman_Game
          }
 
          // Determine if game has been lost
-         if (lettersWrongCounter == maximumWrongChoices)
+         if (lettersWrongCounter == MAXIMUM_WRONG_CHOICES)
          {
             statusLabel.Text = "You have hung your man";
             disableLetterButtons();
@@ -272,7 +277,7 @@ namespace Hangman_Game
       {
          // Cycles through the instruction images
          instructionImageCounter++;
-         if (instructionImageCounter == numberOfInstructionImages) instructionImageCounter = 0;
+         if (instructionImageCounter == NUMBER_OF_INSTRUCTION_IMAGES) instructionImageCounter = 0;
          drawingPictureBox.Image = instructionImages[instructionImageCounter];
       }
 
@@ -314,7 +319,7 @@ namespace Hangman_Game
       // Disable all letter buttons
       private void disableLetterButtons()
       {
-         for (int i = 0; i < numberOfButtons; i++)
+         for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
          {
             charButtons[i].Enabled = false;
          }
@@ -323,7 +328,7 @@ namespace Hangman_Game
       // Enable all letter buttons
       private void enableLetterButtons()
       {
-         for (int i = 0; i < numberOfButtons; i++)
+         for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
          {
             charButtons[i].Enabled = true;
          }
@@ -332,16 +337,16 @@ namespace Hangman_Game
       // Turn all letter buttons green
       private void turnLetterButtonsGreen()
       {
-         for (int i = 0; i < numberOfButtons; i++)
+         for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
          {
-            charButtons[i].BackColor = green;
+            charButtons[i].BackColor = GREEN;
          }
       }
 
       // Clear SecretWord display
       private void clearSecretWordDisplay()
       {
-         for (int i = 0; i < maxWordSize; i++)
+         for (int i = 0; i < MAXIMUM_WORD_SIZE; i++)
          {
             wordLabels[i].Text = "";
             wordLabels[i].Visible = false;
