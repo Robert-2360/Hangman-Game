@@ -9,11 +9,15 @@ namespace Hangman_Game
 {
    public class WordFile
    {
+      // Declare variables
       private string _secretWord;
       private string[] words;
-      private int minimumLength = 4;
-      private int maximumLength = 9;
 
+      // Initialize constants
+      private const int MINIMUM_LENGTH = 4;
+      private const int MAXIMUM_LENGTH = 9;
+
+      // Property for _secretWord
       public string SecretWord
       {
          get
@@ -25,26 +29,35 @@ namespace Hangman_Game
          {
             try
             {
-               if (value.Length < minimumLength)
+               // Check if the word is long enough
+               if (value.Length < MINIMUM_LENGTH)
                {
-                  string message = string.Format("Length must be at least {0} characters long.", minimumLength);
+                  string message = string.Format("Length must be at least {0} characters long.", MINIMUM_LENGTH);
                   throw new NonCompliantWordException(message);
                }
-               else if (maximumLength < value.Length)
+
+               // Check if the word is too long
+               else if (MAXIMUM_LENGTH < value.Length)
                {
-                  string message = string.Format("Length must not be greater than {0} characters long.", maximumLength);
+                  string message = string.Format("Length must not be greater than {0} characters long.", MAXIMUM_LENGTH);
                   throw new NonCompliantWordException(message);
                }
+
+               // Check if the word is all lower case characters
                else if (!isAllLowerCase(value))
                {
                   string message = string.Format("Word contains at least one non-lowercase character.");
                   throw new NonCompliantWordException(message);
                }
+
+               // Set word as the new Secret Word
                else
                {
                   _secretWord = value;
                }
             }
+
+            // Display message and terminate program
             catch (NonCompliantWordException ex)
             {
                string message =
@@ -56,8 +69,10 @@ namespace Hangman_Game
          }
       }
 
+      // Loads a text file into an array
       public WordFile()
       {
+         // Loads file into array
          string file = Properties.Resources.HangmanWords;
          words = file.Split('\n');
 
@@ -68,6 +83,7 @@ namespace Hangman_Game
          }
       }
 
+      // Returns a randomly selectes word from the array
       public string selectRandomSecretWord()
       {
          Random random = new Random();
