@@ -34,8 +34,9 @@ namespace Hangman_Game
       private const int NUMBER_OF_HANGMAN_IMAGES = 8;
       private const int MAXIMUM_WRONG_CHOICES = 7;
       private const int NUMBER_OF_INSTRUCTION_IMAGES = 4;
+      private const int GIVE_ME_A_HINT_IMAGE = 3;
 
-      // Initialize Color constants
+      // Initialize Color "constants"
       private Color RED = Color.FromArgb(255, 232, 235);
       private Color GREEN = Color.FromArgb(202, 234, 189);
 
@@ -59,7 +60,7 @@ namespace Hangman_Game
          wordLabels[7] = wordChar7;
          wordLabels[8] = wordChar8;
 
-         // Initialize button array for letter choices box
+         // Initialize button array for letter choice box
          charButtons = new Button[NUMBER_OF_BUTTONS];
          charButtons[0] = aCharButton;
          charButtons[1] = bCharButton;
@@ -147,7 +148,7 @@ namespace Hangman_Game
          // Reset letter found variable
          bool letterFound = false;
 
-         // Disable button
+         // Disable the chosen button
          b.Enabled = false;
          b.BackColor = RED;
 
@@ -237,16 +238,22 @@ namespace Hangman_Game
          clearSecretWordDisplay();
          wordFile.SecretWord = wordFile.selectRandomSecretWord();
 
+         /***** Test code *****/
+         // Set SecretWord to know value for testing
          // wordFile.SecretWord = "happy";
+
+         // Set variables to process game
          lettersRemainingCounter = wordFile.SecretWord.Length;
          statusLabel.Text = string.Format("Your new word has {0} letters", wordFile.SecretWord.Length);
+
+         // Fill word label array with all blanks
          makeBlankDisplayVisible();
 
          // Reset hanging man image
          drawingPictureBox.Image = Properties.Resources.Man0;
       }
 
-      // Sets up the View Instructions images for clicking through all instructions
+      // Sets up the View Instruction images for clicking through all instructions
       private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
       {
          // Display first instruction image
@@ -273,8 +280,8 @@ namespace Hangman_Game
          instructionImageCounter = 0;
 
          // Set and display "hangman" as SecretWord
-         wordFile.SecretWord = "hangman";
          clearSecretWordDisplay();
+         wordFile.SecretWord = "hangman";
          makeBlankDisplayVisible();
          displaySecretWord();
       }
@@ -282,44 +289,57 @@ namespace Hangman_Game
       // Cycles through the instruction images
       private void nextInstructionButton_Click(object sender, EventArgs e)
       {
+         // Increment counter
          instructionImageCounter++;
+
+         // Check if image has reach the end. If so, reset counter.
          if (instructionImageCounter == NUMBER_OF_INSTRUCTION_IMAGES) instructionImageCounter = 0;
-         if (instructionImageCounter == 3)
+
+         // Check if image is for Give me a hint instruction image
+         if (instructionImageCounter == GIVE_ME_A_HINT_IMAGE)
          {
+            // Make Give me a hint button visible and diabled
             giveMeAHintToolStripMenuItem.Visible = true;
             giveMeAHintToolStripMenuItem.Enabled = false;
          }
          else
          {
+            // Hide Give mive me a hint button
             giveMeAHintToolStripMenuItem.Visible = false;
          }
+
+         // Display instruction image
          drawingPictureBox.Image = instructionImages[instructionImageCounter];
       }
 
       // Actions performed when the Give Up menu button is clicked
       private void giveUpToolStripMenuItem_Click(object sender, EventArgs e)
       {
+         // Display values
          statusLabel.Text = "You gave up";
          drawingPictureBox.Image = Properties.Resources.DeadMan;
-         disableLetterButtons();
          displaySecretWord();
+
+         // Disable buttons
+         disableLetterButtons();
          giveUpToolStripMenuItem.Visible = false;
          giveMeAHintToolStripMenuItem.Visible = false;
       }
 
-      // Reveal the first correct letter that has not been used
+      // Reveal the first correct letter that has not been selected
       private void giveMeAHintToolStripMenuItem_Click(object sender, EventArgs e)
       {
          // Iterate through the Secret Word
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
          {
-            // Unique character code: a = 0 through z = 25
-            int characterCode = wordFile.SecretWord[i] - 97;
+            // Generate a unique character code: a = 0 through z = 25
+            int charCodeFor_a = 97;
+            int characterCode = wordFile.SecretWord[i] - charCodeFor_a;
 
-            // Check if button was not been clicked
+            // Check if button is still enabled (ie it has not been clicked)
             if (charButtons[characterCode].Enabled)
             {
-               // If not, click the letter button and break iteration
+               // If not, click the letter button and break from the iteration
                buttonClicked(charButtons[characterCode]);
                break;
             }
