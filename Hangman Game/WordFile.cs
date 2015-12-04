@@ -50,7 +50,7 @@ namespace Hangman_Game
                   throw new NonCompliantWordException(message);
                }
 
-               // Set word as the new Secret Word
+               // Set value as the new Secret Word
                else
                {
                   _secretWord = value;
@@ -83,7 +83,7 @@ namespace Hangman_Game
          }
       }
 
-      // Returns a randomly selectes word from the array
+      // Returns a randomly selected word from the array
       public string selectRandomSecretWord()
       {
          Random random = new Random();
@@ -91,7 +91,7 @@ namespace Hangman_Game
          return words[randomNumber];
       }
 
-      // Returns true if all the characters in the given word are lower case
+      // Returns true if all the characters in the given word are lowercase
       public bool isAllLowerCase(string word)
       {
          bool result = true;
