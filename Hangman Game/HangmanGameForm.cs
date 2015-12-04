@@ -220,12 +220,13 @@ namespace Hangman_Game
          // Reset counter
          lettersWrongCounter = 0;
 
-         // Make Give Up menu button visible and enabled
+         // Make Give Up menu button visible and enable
          giveUpToolStripMenuItem.Visible = true;
          giveUpToolStripMenuItem.Enabled = true;
 
-         // Hide give me a hint button
+         // Hide give me a hint button and enable
          giveMeAHintToolStripMenuItem.Visible = false;
+         giveMeAHintToolStripMenuItem.Enabled = true;
 
          // Hide next instruction button
          nextInstructionButton.Visible = false;
