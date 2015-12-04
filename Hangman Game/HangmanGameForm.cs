@@ -36,13 +36,14 @@ namespace Hangman_Game
       private const int NUMBER_OF_INSTRUCTION_IMAGES = 4;
       private const int GIVE_ME_A_HINT_IMAGE = 3;
 
-      // Initialize Color "constants"
-      private Color RED = Color.FromArgb(255, 232, 235);
-      private Color GREEN = Color.FromArgb(202, 234, 189);
+      // Initialize Color constants
+      private readonly Color RED = Color.FromArgb(255, 232, 235);
+      private readonly Color GREEN = Color.FromArgb(202, 234, 189);
 
-      // When game form is first loaded, initialize variables and display "welcome"
+      // When game form is first loaded, initialize variables, and display "welcome"
       private void HangmanGameForm_Load(object sender, EventArgs e)
       {
+         // Initialize variables
          wordFile = new WordFile();
          nextInstructionButton.Visible = false;
          giveUpToolStripMenuItem.Visible = false;
