@@ -73,8 +73,8 @@
          this.menuStrip1 = new System.Windows.Forms.MenuStrip();
          this.startNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.viewInstrutionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.giveMeAHintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.giveUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.giveMeAHintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.charsFlowPanel.SuspendLayout();
          this.drawingPanel.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.drawingPictureBox)).BeginInit();
@@ -650,6 +650,7 @@
          // 
          // startNewGameToolStripMenuItem
          // 
+         this.startNewGameToolStripMenuItem.AutoSize = false;
          this.startNewGameToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(234)))), ((int)(((byte)(189)))));
          this.startNewGameToolStripMenuItem.Name = "startNewGameToolStripMenuItem";
          this.startNewGameToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
@@ -658,27 +659,30 @@
          // 
          // viewInstrutionsToolStripMenuItem
          // 
+         this.viewInstrutionsToolStripMenuItem.AutoSize = false;
          this.viewInstrutionsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
          this.viewInstrutionsToolStripMenuItem.Name = "viewInstrutionsToolStripMenuItem";
          this.viewInstrutionsToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
          this.viewInstrutionsToolStripMenuItem.Text = "View Instructions";
          this.viewInstrutionsToolStripMenuItem.Click += new System.EventHandler(this.viewInstrutionsToolStripMenuItem_Click);
          // 
-         // giveMeAHintToolStripMenuItem
-         // 
-         this.giveMeAHintToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(125)))), ((int)(((byte)(141)))));
-         this.giveMeAHintToolStripMenuItem.Name = "giveMeAHintToolStripMenuItem";
-         this.giveMeAHintToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
-         this.giveMeAHintToolStripMenuItem.Text = "Give me a hint";
-         this.giveMeAHintToolStripMenuItem.Click += new System.EventHandler(this.giveMeAHintToolStripMenuItem_Click);
-         // 
          // giveUpToolStripMenuItem
          // 
+         this.giveUpToolStripMenuItem.AutoSize = false;
          this.giveUpToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(216)))));
          this.giveUpToolStripMenuItem.Name = "giveUpToolStripMenuItem";
          this.giveUpToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
          this.giveUpToolStripMenuItem.Text = "Give Up";
          this.giveUpToolStripMenuItem.Click += new System.EventHandler(this.giveUpToolStripMenuItem_Click);
+         // 
+         // giveMeAHintToolStripMenuItem
+         // 
+         this.giveMeAHintToolStripMenuItem.AutoSize = false;
+         this.giveMeAHintToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(125)))), ((int)(((byte)(141)))));
+         this.giveMeAHintToolStripMenuItem.Name = "giveMeAHintToolStripMenuItem";
+         this.giveMeAHintToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+         this.giveMeAHintToolStripMenuItem.Text = "Give me a hint";
+         this.giveMeAHintToolStripMenuItem.Click += new System.EventHandler(this.giveMeAHintToolStripMenuItem_Click);
          // 
          // HangmanGameForm
          // 

@@ -192,7 +192,7 @@ namespace Hangman_Game
          }
 
          // Update status label
-         statusLabel.Text = string.Format("Remaining: {0} Letters wrong: {1}",
+         statusLabel.Text = string.Format("Letters Remaining: {0} Wrong: {1}",
             lettersRemainingCounter, lettersWrongCounter);
 
          // Determine if game has been won
