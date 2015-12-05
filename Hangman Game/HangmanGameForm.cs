@@ -27,6 +27,8 @@ namespace Hangman_Game
       private int lettersRemainingCounter;
       private int lettersWrongCounter;
       private int instructionImageCounter;
+      private int numberOfGamesWon;
+      private int numberOfGamesLost;
 
       // Initialize int constants
       private const int MAXIMUM_WORD_SIZE = 9;
@@ -48,6 +50,8 @@ namespace Hangman_Game
          nextInstructionButton.Visible = false;
          giveUpToolStripMenuItem.Visible = false;
          giveMeAHintToolStripMenuItem.Visible = false;
+         numberOfGamesWon = 0;
+         numberOfGamesLost = 0;
 
          // Initialize label array for SecretWord display
          wordLabels = new Label[MAXIMUM_WORD_SIZE];
@@ -198,7 +202,9 @@ namespace Hangman_Game
          // Determine if game has been won
          if (lettersRemainingCounter == 0)
          {
-            statusLabel.Text = "You win";
+            numberOfGamesWon++;
+            statusLabel.Text = string.Format("You won!       Won: {0} Lost: {1}",
+               numberOfGamesWon, numberOfGamesLost);
             giveUpToolStripMenuItem.Visible = false;
             drawingPictureBox.Image = Properties.Resources.AliveMan;
             disableLetterButtons();
@@ -207,7 +213,9 @@ namespace Hangman_Game
          // Determine if game has been lost
          if (lettersWrongCounter == MAXIMUM_WRONG_CHOICES)
          {
-            statusLabel.Text = "You have hung your man";
+            numberOfGamesLost++;
+            statusLabel.Text = string.Format("You're hung!   Won: {0} Lost: {1}",
+               numberOfGamesWon, numberOfGamesLost);
             disableLetterButtons();
             displaySecretWord();
             giveUpToolStripMenuItem.Visible = false;
@@ -317,8 +325,12 @@ namespace Hangman_Game
       // Actions performed when the Give Up menu button is clicked
       private void giveUpToolStripMenuItem_Click(object sender, EventArgs e)
       {
+         // Increment counter
+         numberOfGamesLost++;
+
          // Display values
-         statusLabel.Text = "You gave up";
+         statusLabel.Text = string.Format("You gave up!   Won: {0} Lost: {1}",
+               numberOfGamesWon, numberOfGamesLost);
          drawingPictureBox.Image = Properties.Resources.DeadMan;
          displaySecretWord();
 
