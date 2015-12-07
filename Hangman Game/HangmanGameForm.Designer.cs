@@ -472,12 +472,12 @@
          // 
          this.textSourceLink.BackColor = System.Drawing.Color.White;
          this.textSourceLink.Font = new System.Drawing.Font("Segoe UI", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.textSourceLink.Location = new System.Drawing.Point(184, 197);
+         this.textSourceLink.Location = new System.Drawing.Point(50, 228);
          this.textSourceLink.Name = "textSourceLink";
-         this.textSourceLink.Size = new System.Drawing.Size(199, 33);
+         this.textSourceLink.Size = new System.Drawing.Size(478, 33);
          this.textSourceLink.TabIndex = 2;
          this.textSourceLink.TabStop = true;
-         this.textSourceLink.Text = "Click Here for URL link";
+         this.textSourceLink.Text = "http://introcs.cs.princeton.edu/java/data/1000words.txt";
          this.textSourceLink.Visible = false;
          this.textSourceLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.textSourceLink_LinkClicked);
          // 
