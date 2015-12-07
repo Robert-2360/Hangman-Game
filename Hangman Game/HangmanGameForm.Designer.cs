@@ -56,6 +56,7 @@
          this.yCharButton = new System.Windows.Forms.Button();
          this.zCharButton = new System.Windows.Forms.Button();
          this.drawingPanel = new System.Windows.Forms.Panel();
+         this.textSourceLink = new System.Windows.Forms.LinkLabel();
          this.nextInstructionButton = new System.Windows.Forms.Button();
          this.drawingPictureBox = new System.Windows.Forms.PictureBox();
          this.wordPanel = new System.Windows.Forms.Panel();
@@ -459,12 +460,26 @@
          // 
          // drawingPanel
          // 
+         this.drawingPanel.Controls.Add(this.textSourceLink);
          this.drawingPanel.Controls.Add(this.nextInstructionButton);
          this.drawingPanel.Controls.Add(this.drawingPictureBox);
          this.drawingPanel.Location = new System.Drawing.Point(12, 31);
          this.drawingPanel.Name = "drawingPanel";
          this.drawingPanel.Size = new System.Drawing.Size(569, 450);
          this.drawingPanel.TabIndex = 1;
+         // 
+         // textSourceLink
+         // 
+         this.textSourceLink.BackColor = System.Drawing.Color.White;
+         this.textSourceLink.Font = new System.Drawing.Font("Segoe UI", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.textSourceLink.Location = new System.Drawing.Point(184, 197);
+         this.textSourceLink.Name = "textSourceLink";
+         this.textSourceLink.Size = new System.Drawing.Size(199, 33);
+         this.textSourceLink.TabIndex = 2;
+         this.textSourceLink.TabStop = true;
+         this.textSourceLink.Text = "Click Here for URL link";
+         this.textSourceLink.Visible = false;
+         this.textSourceLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.textSourceLink_LinkClicked);
          // 
          // nextInstructionButton
          // 
@@ -762,6 +777,7 @@
       private System.Windows.Forms.Button nextInstructionButton;
       private System.Windows.Forms.ToolStripMenuItem giveMeAHintToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem giveUpToolStripMenuItem;
+      private System.Windows.Forms.LinkLabel textSourceLink;
    }
 }
 

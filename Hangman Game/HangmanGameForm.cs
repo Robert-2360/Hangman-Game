@@ -17,6 +17,9 @@ namespace Hangman_Game
       // Declare wordFile reference
       private WordFile wordFile;
 
+      // Declare web link reference
+      LinkLabel.Link link;
+
       // Declare array references
       private Label[] wordLabels;
       private Button[] charButtons;
@@ -36,6 +39,7 @@ namespace Hangman_Game
       private const int NUMBER_OF_HANGMAN_IMAGES = 8;
       private const int MAXIMUM_WRONG_CHOICES = 7;
       private const int NUMBER_OF_INSTRUCTION_IMAGES = 4;
+      private const int TEXT_SOURCE_IMAGE = 1;
       private const int GIVE_ME_A_HINT_IMAGE = 3;
 
       // Initialize Color constants
@@ -47,11 +51,16 @@ namespace Hangman_Game
       {
          // Initialize variables
          wordFile = new WordFile();
+         link = new LinkLabel.Link();
          nextInstructionButton.Visible = false;
          giveUpToolStripMenuItem.Visible = false;
          giveMeAHintToolStripMenuItem.Visible = false;
          numberOfGamesWon = 0;
          numberOfGamesLost = 0;
+
+         // Add link data
+         link.LinkData = "http://introcs.cs.princeton.edu/java/data/1000words.txt";
+         textSourceLink.Links.Add(link);
 
          // Initialize label array for SecretWord display
          wordLabels = new Label[MAXIMUM_WORD_SIZE];
@@ -240,6 +249,9 @@ namespace Hangman_Game
          // Hide next instruction button
          nextInstructionButton.Visible = false;
 
+         // Hide URL source link
+         textSourceLink.Visible = false;
+
          // Enable all letter buttons and turn then green
          enableLetterButtons();
          turnLetterButtonsGreen();
@@ -279,6 +291,9 @@ namespace Hangman_Game
          // Make Next Instruction button visible
          nextInstructionButton.Visible = true;
 
+         // Hide URL source link
+         textSourceLink.Visible = false;
+
          // Disable all letter buttons and turn them green
          disableLetterButtons();
          turnLetterButtonsGreen();
@@ -312,10 +327,16 @@ namespace Hangman_Game
             giveMeAHintToolStripMenuItem.Visible = true;
             giveMeAHintToolStripMenuItem.Enabled = false;
          }
+         // Check if image is for URL text source instruction
+         else if (instructionImageCounter == TEXT_SOURCE_IMAGE)
+         {
+            textSourceLink.Visible = true;
+         }
          else
          {
-            // Hide Give mive me a hint button
+            // Hide Give mive me a hint button and URL source link
             giveMeAHintToolStripMenuItem.Visible = false;
+            textSourceLink.Visible = false;
          }
 
          // Display instruction image
@@ -361,6 +382,12 @@ namespace Hangman_Game
 
          // Make menu button invisible
          giveMeAHintToolStripMenuItem.Visible = false;
+      }
+
+      // Actives link which connects to web text source page
+      private void textSourceLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+      {
+         System.Diagnostics.Process.Start(e.Link.LinkData as string);
       }
 
       /***** The following are helper methods *****/
