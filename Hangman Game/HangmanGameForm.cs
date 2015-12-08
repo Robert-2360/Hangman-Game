@@ -259,10 +259,10 @@ namespace Hangman_Game
          clearSecretWordDisplay();
          wordFile.SecretWord = wordFile.selectRandomSecretWord();
 
-         // Test code: Set SecretWord to know value for testing
+         ///// Test code: Set SecretWord to know value for testing
          // wordFile.SecretWord = "happy";
 
-         // Set variables to process game
+         // Set variables to process new game
          lettersRemainingCounter = wordFile.SecretWord.Length;
          statusLabel.Text = string.Format("Your new word has {0} letters", wordFile.SecretWord.Length);
 
