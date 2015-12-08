@@ -46,7 +46,8 @@ namespace Hangman_Game
       private readonly Color RED = Color.FromArgb(255, 232, 235);
       private readonly Color GREEN = Color.FromArgb(202, 234, 189);
 
-      // When game form is first loaded, initialize variables, and display "welcome"
+      /*** When game form is first loaded: Initialize variables, Add url link,
+              Disable buttons, and Display "welcome" in wordLabel slots ***/
       private void HangmanGameForm_Load(object sender, EventArgs e)
       {
          // Initialize variables
@@ -55,10 +56,6 @@ namespace Hangman_Game
          nextInstructionButton.Visible = false;
          numberOfGamesWon = 0;
          numberOfGamesLost = 0;
-
-         // Add link data
-         link.LinkData = "http://introcs.cs.princeton.edu/java/data/1000words.txt";
-         textSourceLink.Links.Add(link);
 
          // Initialize label array for SecretWord display
          wordLabels = new Label[MAXIMUM_WORD_SIZE];
@@ -119,6 +116,10 @@ namespace Hangman_Game
          instructionImages[2] = Properties.Resources.Instructions2;
          instructionImages[3] = Properties.Resources.Instructions3;
 
+         // Add link data
+         link.LinkData = "http://introcs.cs.princeton.edu/java/data/1000words.txt";
+         textSourceLink.Links.Add(link);
+
          // Disable letter buttons and 2 menu buttons
          cleanUpButtons();
 
@@ -129,7 +130,7 @@ namespace Hangman_Game
          displaySecretWord();
       }
 
-      // The following 26 methods are for each letter button
+      /*** The following 26 methods are for each letter button ***/
       private void aCharButton_Click(object sender, EventArgs e) { buttonClicked(aCharButton); }
       private void bCharButton_Click(object sender, EventArgs e) { buttonClicked(bCharButton); }
       private void cCharButton_Click(object sender, EventArgs e) { buttonClicked(cCharButton); }
@@ -157,7 +158,7 @@ namespace Hangman_Game
       private void yCharButton_Click(object sender, EventArgs e) { buttonClicked(yCharButton); }
       private void zCharButton_Click(object sender, EventArgs e) { buttonClicked(zCharButton); }
 
-      // Actions performed when a letter button is clicked
+      /*** Actions performed when a letter button is clicked ***/
       private void buttonClicked(Button b)
       {
          // Reset letter found variable
@@ -230,7 +231,7 @@ namespace Hangman_Game
          }
       }
 
-      // Sets up the start of a new game
+      /*** Sets up the start of a new game ***/
       private void startNewGameToolStripMenuItem_Click(object sender, EventArgs e)
       {
          // Reset counter
@@ -258,8 +259,7 @@ namespace Hangman_Game
          clearSecretWordDisplay();
          wordFile.SecretWord = wordFile.selectRandomSecretWord();
 
-         /***** Test code *****/
-         // Set SecretWord to know value for testing
+         // Test code: Set SecretWord to know value for testing
          // wordFile.SecretWord = "happy";
 
          // Set variables to process game
@@ -273,7 +273,7 @@ namespace Hangman_Game
          drawingPictureBox.Image = Properties.Resources.Man0;
       }
 
-      // Sets up the View Instruction images for clicking through all instructions
+      /*** Sets up the View Instruction images for clicking through all instructions ***/
       private void viewInstrutionsToolStripMenuItem_Click(object sender, EventArgs e)
       {
          // Display first instruction image
@@ -308,7 +308,7 @@ namespace Hangman_Game
          displaySecretWord();
       }
 
-      // Cycles through the instruction images
+      /*** Cycles through the instruction images ***/
       private void nextInstructionButton_Click(object sender, EventArgs e)
       {
          // Increment counter
@@ -340,7 +340,7 @@ namespace Hangman_Game
          drawingPictureBox.Image = instructionImages[instructionImageCounter];
       }
 
-      // Actions performed when the Give Up menu button is clicked
+      /*** Actions performed when the Give Up menu button is clicked ***/
       private void giveUpToolStripMenuItem_Click(object sender, EventArgs e)
       {
          // Increment counter
@@ -356,7 +356,7 @@ namespace Hangman_Game
          cleanUpButtons();
       }
 
-      // Reveal the first correct letter that has not been selected
+      /*** Reveal the first correct letter that has not been selected ***/
       private void giveMeAHintToolStripMenuItem_Click(object sender, EventArgs e)
       {
          // Iterate through the Secret Word
@@ -379,7 +379,7 @@ namespace Hangman_Game
          giveMeAHintToolStripMenuItem.Visible = false;
       }
 
-      // Actives link which connects to web text source page
+      /*** Actives link which connects to web text source page ***/
       private void textSourceLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
       {
          System.Diagnostics.Process.Start(e.Link.LinkData as string);
@@ -387,7 +387,7 @@ namespace Hangman_Game
 
       /***** The following are helper methods *****/
 
-      // Disable all letter buttons
+      /* Disable all letter buttons */
       private void disableLetterButtons()
       {
          for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
@@ -396,7 +396,7 @@ namespace Hangman_Game
          }
       }
 
-      // Enable all letter buttons
+      /* Enable all letter buttons */
       private void enableLetterButtons()
       {
          for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
@@ -405,7 +405,7 @@ namespace Hangman_Game
          }
       }
 
-      // Turn all letter buttons green
+      /* Turn all letter buttons green */
       private void turnLetterButtonsGreen()
       {
          for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
@@ -414,7 +414,7 @@ namespace Hangman_Game
          }
       }
 
-      // Clear SecretWord display
+      /* Clear SecretWord display */
       private void clearSecretWordDisplay()
       {
          for (int i = 0; i < MAXIMUM_WORD_SIZE; i++)
@@ -424,7 +424,7 @@ namespace Hangman_Game
          }
       }
 
-      // Make display visible for new SecretWord
+      /* Make display visible for new SecretWord */
       private void makeBlankDisplayVisible()
       {
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
@@ -433,7 +433,7 @@ namespace Hangman_Game
          }
       }
 
-      // Display the SecretWord
+      /* Display the SecretWord */
       private void displaySecretWord()
       {
          for (int i = 0; i < wordFile.SecretWord.Length; i++)
@@ -442,7 +442,7 @@ namespace Hangman_Game
          }
       }
 
-      // Disable letter buttons and hide 2 menu buttons
+      /* Disable letter buttons and hide 2 menu buttons */
       private void cleanUpButtons()
       {
          disableLetterButtons();
