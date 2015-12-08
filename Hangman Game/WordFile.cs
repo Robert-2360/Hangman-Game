@@ -17,7 +17,7 @@ namespace Hangman_Game
       private const int MINIMUM_LENGTH = 4;
       private const int MAXIMUM_LENGTH = 9;
 
-      // Property for _secretWord
+      /*** Property for _secretWord ***/
       public string SecretWord
       {
          get
@@ -69,7 +69,7 @@ namespace Hangman_Game
          }
       }
 
-      // Loads a text file into an array
+      /*** Loads a text file into an array ***/
       public WordFile()
       {
          // Loads file into array
@@ -83,7 +83,7 @@ namespace Hangman_Game
          }
       }
 
-      // Returns a randomly selected word from the array
+      /*** Returns a randomly selected word from the array ***/
       public string selectRandomSecretWord()
       {
          Random random = new Random();
@@ -91,7 +91,7 @@ namespace Hangman_Game
          return words[randomNumber];
       }
 
-      // Returns true if all the characters in the given word are lowercase
+      /*** Returns true if all the characters in the given word are lowercase ***/
       public bool isAllLowerCase(string word)
       {
          bool result = true;
